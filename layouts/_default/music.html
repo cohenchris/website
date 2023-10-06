@@ -1,0 +1,19 @@
+{{ define "pageSpecificStyle" }}
+  <head>
+    {{ $style := resources.Get "css/music.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+{{ end }}
+
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="musicCardGrid">
+    {{ $jsonData := getJSON "static/music/library.json" }}
+    {{ range $jsonData }}
+      {{ partial "artistcard.html" . }}
+    {{ end }}
+  </div>
+{{ end }}

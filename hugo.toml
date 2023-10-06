@@ -1,3 +1,7 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://chriscohen.dev"
+languageCode = "en-us"
+title = "Chris Cohen"
+
+[params]
+  favicon="/favicon.svg"
+  stylesheet="/css/global.css"

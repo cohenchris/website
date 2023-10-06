@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Terminus";
+  src: url("/fonts/terminus.ttf") format("truetype");
+}
+
+html,
+body {
+  font-size: 18px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Terminus";
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

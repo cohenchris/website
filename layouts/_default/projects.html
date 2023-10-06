@@ -1,0 +1,16 @@
+{{ define "pageSpecificStyle" }}
+  <head>
+    {{ $style := resources.Get "css/projects.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+  </head>
+{{ end }}
+
+
+{{ define "main" }}
+  <h1>Posts</h1>
+  {{ range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+{{ end }}
