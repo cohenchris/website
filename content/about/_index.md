@@ -2,7 +2,6 @@
 title: "About"
 description: "Information about me and this website"
 layout: single
-css: "css/about.css"
 ---
 
 # Hi, I'm Chris Cohen

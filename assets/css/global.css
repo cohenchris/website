@@ -7,7 +7,6 @@ html,
 body {
   font-size: 18px;
   width: 100%;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -15,6 +14,7 @@ body {
 * {
   box-sizing: border-box;
   font-family: "Terminus";
+  max-width: 800px;
 }
 
 a {
@@ -25,6 +25,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  height: auto;
+  width: 500px;
 }
 
 .navbar {
