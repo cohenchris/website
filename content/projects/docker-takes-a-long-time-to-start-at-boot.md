@@ -1,6 +1,7 @@
 ---
 title: "Docker Takes a Long Time To Start At Boot"
 date: 2023-10-01
+description: "Sometimes, the docker daemon takes multiple minutes to start on boot. This is a solution to fix that."
 tags: ['docker', 'homelab', 'networking']
 ---
 

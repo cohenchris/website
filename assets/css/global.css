@@ -19,7 +19,14 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
+
+a:hover {
+  cursor: pointer;
+  color: grey;
+}
+
 
 img {
   display: block;
