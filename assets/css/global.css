@@ -26,3 +26,26 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: white;
+}
+
+.navBrand {
+  justify-content: left;
+  list-style: none;
+  font-size: 200%;
+  width: 100%;
+  color: black;
+}
+
+.navLink {
+  list-style: none;
+  color: black;
+  font-size: 100%;
+  margin-right: 20px;
+}

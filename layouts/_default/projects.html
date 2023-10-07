@@ -1,8 +1,6 @@
-{{ define "pageSpecificStyle" }}
-  <head>
-    {{ $style := resources.Get "css/projects.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-  </head>
+{{ define "pageCSS" }}
+  {{ $style := resources.Get "css/projects.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ end }}
 
 

@@ -1,22 +1,13 @@
 <!DOCTYPE html>
+<head>
+
+  {{ block "pageCSS" . }}
+  {{ end }}
+</head>
 <html>
-  <head>
-    <meta charset="utf-8">
-
-    <title>{{ block "title" . }}
-      {{ .Site.Title }}
-      {{ end }}
-    </title>
-
-    {{ $style := resources.Get "css/global.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
-
-    {{ block "pageSpecificStyle" . }}
-    {{ end }}
-    
-  </head>
-
+  {{ partial "base/header.html" . }}
   <body>
+    {{ partial "base/navbar.html" . }}
     {{ block "main" . }}
     {{ end }}
     {{ block "footer" . }}

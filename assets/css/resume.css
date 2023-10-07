@@ -1,0 +1,17 @@
+.resume {
+  width: 100%;
+}
+
+.resumeDownloadButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resumeDownloadButton a {
+  color: black;
+}

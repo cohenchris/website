@@ -1,0 +1,20 @@
+{{ define "pageCSS" }}
+  {{ $style := resources.Get "css/home.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}
+
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="mainHeader">
+  <h1 class="jobTitleText">
+    Software Security Engineer for Qualcomm
+  </h1>
+
+  <h1 class="alumnusText">
+    Purdue University Alumnus
+  </h1>
+</div>
+{{ end }}

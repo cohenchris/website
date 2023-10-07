@@ -1,8 +1,5 @@
 ---
 title: "Home"
 description: "A personal static Hugo-based website"
-layout: single
+layout: home 
 ---
-
-# Software Security Engineer for Qualcomm
-# Purdue University Alumnus

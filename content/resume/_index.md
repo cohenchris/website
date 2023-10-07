@@ -1,6 +1,5 @@
 ---
 title: "Resume"
 description: "My resume."
-layout: single
+layout: resume 
 ---
-
