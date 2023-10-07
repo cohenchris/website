@@ -1,10 +1,8 @@
 ---
-title: "About"
+title: "Hi, I'm Chris Cohen"
 description: "Information about me and this website"
 layout: single
 ---
-
-# Hi, I'm Chris Cohen
 
 I graduated from Purdue University in May 2021 with a B.S. in Computer Science, emphasizing software engineering and computer security. I currently work for Qualcomm in San Diego, CA as a software security engineer.
 

@@ -21,7 +21,6 @@ a {
   text-decoration: none;
   color: black;
 }
-
 a:hover {
   cursor: pointer;
   color: grey;
@@ -32,8 +31,6 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: auto;
-  width: 500px;
 }
 
 .navbar {
@@ -42,6 +39,7 @@ img {
   align-items: center;
   background-color: white;
   color: white;
+  margin-bottom: 50px;
 }
 
 .navBrand {

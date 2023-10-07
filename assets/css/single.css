@@ -1,0 +1,12 @@
+.articleTitle {
+  text-align: center;
+  font-size: 45px;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+}
+
+img {
+  height: auto;
+  width: 500px;
+}
