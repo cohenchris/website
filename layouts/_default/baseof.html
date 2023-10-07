@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
+  {{ partial "base/header.html" . }}
 
+  <!-- custom page-specific css -->
   {{ block "pageCSS" . }}
   {{ end }}
 </head>
+
 <html>
-  {{ partial "base/header.html" . }}
   <body>
     {{ partial "base/navbar.html" . }}
     {{ block "main" . }}
