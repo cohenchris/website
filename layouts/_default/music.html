@@ -14,11 +14,12 @@
   {{ $cardPartial := "albumcard.html" }}
   {{ $jsonData := "" }}
 
-  <!-- Dropdowns -->
   <div class="dropdowns">
+    <!-- Dropdowns -->
     <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
       <option>Artists</option>
       <option>Albums</option>
+      <option disabled>Artist's Albums</option>
      </select>
 
      <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
@@ -28,6 +29,15 @@
       <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
       <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
      </select>
+
+    <!-- Back Button -->
+    {{ if ne $displayedArtistName "" }}
+      <a href="/music/artists">
+        <button class="backButton">
+          &lt;- Back to Artists View
+        </button>
+      </a>
+    {{ end }}
   </div>
 
   <!-- Cards -->
@@ -45,7 +55,7 @@
     {{ else if eq .Params.displayOption "Artists" }}
       {{ $jsonData = getJSON "/static/music/artists.json" }}
       {{ range $jsonData }}
-        {{ partial "artistcard.html" . "Artists" }}
+        {{ partial "artistcard.html" . "Artists" (dict "displayedArtistName" $displayedArtistName) }}
       {{ end }}
     {{ end }}
 
