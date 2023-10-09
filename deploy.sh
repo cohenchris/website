@@ -2,5 +2,8 @@
 
 hugo
 
-mv public/* /home/phrog/server/config/swag/www/chriscohen.dev/html
-rm -r public
+mv public/ html/
+
+rm -r /home/phrog/server/config/swag/www/chriscohen.dev/html
+
+mv html /home/phrog/server/config/swag/www/chriscohen.dev/
