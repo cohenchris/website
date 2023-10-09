@@ -18,7 +18,7 @@
 
 <div class="albumCard">
   <div class="albumCoverAndTitle">
-    <img src={{ strings.TrimSuffix .albumCover "/" }}/>
+    <img src={{ .albumCover }} alt="{{ $.albumTitle }} Album Cover"/>
     <h3>{{ .albumTitle }} ({{ .albumYear }})</h3>
   </div>
   <div class="albumInfo">
