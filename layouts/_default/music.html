@@ -4,9 +4,7 @@
 {{ end }}
 
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
-{{ end }}
-
+  {{ .Title }} &ndash; {{ .Site.Title }} {{ end }}
 {{ define "main" }}
 
   {{ $whichItemsToDisplay := "Albums" }}
@@ -17,7 +15,6 @@
   {{ $jsonData := "" }}
 
   <div class="dropdowns">
-    <!-- Dropdowns -->
     <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
       <option>Artists</option>
       <option selected>Albums</option>
@@ -30,22 +27,6 @@
       <option>Random</option>
       <option selected>Rating (High -> Low)</option>
       <option>Rating (Low -> High)</option> </select>
-
-      <!-- Dropdown event listeners -->
-      <script>
-        const displayOptionsDropdown = document.getElementById("displayOptionsDropdown");
-        const sortMethodsDropdown = document.getElementById("sortMethodsDropdown");
-    
-        displayOptionsDropdown.addEventListener('change', function() {
-          const selectedValue = displayOptionsDropdown.value;
-          {{ $.Scratch.Set "whichItemsToDisplay" "selectedValue" | safeJS }}
-        });
-    
-        sortMethodsDropdown.addEventListener('change', function() {
-          const selectedValue = sortMethodsDropdown.value;
-          {{ $.Scratch.Set "howToSortitems" "selectedValue" | safeJS }}
-        });
-      </script>
   </div>
 
 

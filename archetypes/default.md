@@ -1,7 +1,7 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: {{ .Date }}
-description: ""
+description: ''
 tags: []
 showPageTitle: true
 ---
