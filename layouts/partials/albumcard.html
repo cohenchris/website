@@ -1,10 +1,28 @@
+{{ $ratingColor := "" }}
+
+{{ with .albumRating }}
+  {{ if lt . 6 }}
+    {{ $ratingColor = "red" }}
+
+  {{ else if lt . 7.5 }}
+    {{ $ratingColor = "orange" }}
+
+  {{ else if lt . 8.5 }}
+    {{ $ratingColor = "lightGreen" }}
+
+  {{ else }}
+    {{ $ratingColor = "green" }}
+
+  {{ end }}
+{{ end }}
+
 <div class="albumCard">
   <div class="albumCoverAndTitle">
     <img src={{ .albumCover }}/>
-    <h3>{{ .albumName }} ({{ .albumYear }})</h3>
+    <h3>{{ .albumTitle }} ({{ .albumYear }})</h3>
   </div>
   <div class="albumInfo">
     <h5>{{ .albumArtist }}</h5>
-    <h5>{{ .albumRating }} / 10</h5>
+    <h5 style="color : {{ $ratingColor }}"> {{ .albumRating }} / 10</h5>
   </div>
 </div>

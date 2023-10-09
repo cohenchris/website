@@ -8,10 +8,56 @@
 {{ end }}
 
 {{ define "main" }}
+
+  {{ $whichItemsToDisplay := "Artists" }}
+  {{ $howToSortItems := "Rating (High -> Low)" }}
+  {{ $displayedArtistName := "" }}
+  {{ $jsonFile := "artists.json" }}
+  {{ $cardPartial := "artistcard.html" }}
+  {{ $jsonData := "" }}
+
+  <div class="dropdowns">
+    <!-- Dropdowns -->
+    <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
+      <option>Artists</option>
+      <option selected>Albums</option>
+      <option>Artist's Albums</option>
+     </select>
+
+     <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
+      <option>A-Z</option>
+      <option>Z-A</option>
+      <option>Random</option>
+      <option selected>Rating (High -> Low)</option>
+      <option>Rating (Low -> High)</option> </select>
+
+      <!-- Dropdown event listeners -->
+      <script>
+        const displayOptionsDropdown = document.getElementById("displayOptionsDropdown");
+        const sortMethodsDropdown = document.getElementById("sortMethodsDropdown");
+    
+        displayOptionsDropdown.addEventListener('change', function() {
+          const selectedValue = displayOptionsDropdown.value;
+          {{ $.Scratch.Set "whichItemsToDisplay" "selectedValue" | safeJS }}
+        });
+    
+        sortMethodsDropdown.addEventListener('change', function() {
+          const selectedValue = sortMethodsDropdown.value;
+          {{ $.Scratch.Set "howToSortitems" "selectedValue" | safeJS }}
+        });
+      </script>
+  </div>
+
+
   <div class="musicCardGrid">
-    {{ $jsonData := getJSON "static/music/library.json" }}
-    {{ range $jsonData }}
-      {{ partial "artistcard.html" . }}
-    {{ end }}
+  {{ if $displayedArtistName }}
+    {{ $jsonData = (getJSON (printf "/static/music/metadata/%s/%s" $displayedArtistName $jsonFile)).artistAlbums }}
+  {{ else }}
+    {{ $jsonData = getJSON (printf "/static/music/%s" $jsonFile) }}
+  {{ end }}
+
+  {{ range $jsonData }}
+    {{ partial $cardPartial . }}
+  {{ end }}
   </div>
 {{ end }}
