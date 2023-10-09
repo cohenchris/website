@@ -1,22 +1,15 @@
 const displayOptionsDropdown = document.getElementById("displayOptionsDropdown");
 const sortMethodsDropdown = document.getElementById("sortMethodsDropdown");
-const artistLink = document.getElementById("artistLink");
+const artistCards = document.querySelectorAll(".artistCard");
 
 // Listner on page load
 document.addEventListener("DOMContentLoaded", function() {
-  console.log(window.location.pathname);
   if (window.location.pathname === "/music/albums/")
-  {
-    displayOptionsDropdown.value = "Albums"
-    sortMethodsDropdown.value = "Rating (High -> Low)"
-    handleSort(sortMethodsDropdown.value);
-  }
-  else if (window.location.pathname === "/music/artists/")
   {
     if (window.location.search === "")
     {
-      displayOptionsDropdown.value = "Artists"
-      sortMethodsDropdown.value = "Random"
+      displayOptionsDropdown.value = "Albums"
+      sortMethodsDropdown.value = "Rating (High -> Low)"
       handleSort(sortMethodsDropdown.value);
     }
     else
@@ -24,7 +17,19 @@ document.addEventListener("DOMContentLoaded", function() {
       displayOptionsDropdown.value = "Artist's Albums"
       sortMethodsDropdown.value = "Rating (High -> Low)"
       handleSort(sortMethodsDropdown.value);
+
+      // Filter albums down by artistName
+      const artistName = new URLSearchParams(window.location.search).get("artistName");
+      filterAlbumsByArtistName(artistName);
+
+
     }
+  }
+  else if (window.location.pathname === "/music/artists/")
+  {
+    displayOptionsDropdown.value = "Artists"
+    sortMethodsDropdown.value = "Random"
+    handleSort(sortMethodsDropdown.value);
   }
   else {
   }
@@ -50,13 +55,12 @@ sortMethodsDropdown.addEventListener('change', function() {
 });
 
 // Listener for displayed artist name
-artistLink.addEventListener('click', function(event) {
-  console.log("y");
-  event.preventDefault();
-
-  const url = new URL(this.href);
-  const artistName = url.searchParams.get("artistName");
-  console.log(artistName);
+artistCards.forEach(card => {
+  const artistLink = card.querySelector(".artistLink");
+  artistLink.addEventListener('click', function(event) {
+    const url = new URL(this.href);
+    const artistName = url.searchParams.get("artistName");
+  });
 });
 
 // Card sorting
@@ -114,4 +118,31 @@ function handleSort(newSortMethod) {
   {
     musicCardGrid.appendChild(toSort[i]);
   }
+}
+
+function filterAlbumsByArtistName(artistName) {
+  let musicCardGrid = document.getElementById("musicCardGrid");
+  let toFilter = musicCardGrid.children;
+  toFilter = Array.prototype.slice.call(toFilter, 0);
+  let filtered = [];
+
+  toFilter.forEach(card => {
+    const cardArtistName = card.getAttribute("artist");
+
+    if (cardArtistName === artistName)
+    {
+      filtered.push(card);
+    }
+  });
+
+  // Clear
+  musicCardGrid.innerHTML = "";
+
+  // Re-populate cards
+  let i = 0;
+  for (l = filtered.length; i < l; i++)
+  {
+    musicCardGrid.appendChild(filtered[i]);
+  }
+
 }

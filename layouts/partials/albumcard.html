@@ -16,7 +16,7 @@
   {{ end }}
 {{ end }}
 
-<div class="albumCard" id={{ .albumTitle }} rating={{ .albumRating }}>
+<div class="albumCard" id={{ .albumTitle }} rating={{ .albumRating }} artist={{ .albumArtist }}>
   <div class="albumCoverAndTitle">
     <img src={{ .albumCover }} alt="{{ .albumTitle }} Album Cover"/>
     <h3 id="name">{{ .albumTitle }} ({{ .albumYear }})</h3>
