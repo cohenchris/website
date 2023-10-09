@@ -1,7 +1,9 @@
-<div class="artistCard" on>
-  <div class="artistInfo">
-    <h2>{{ .artistName }}</h2>
-    <p>{{ .artistNumRatedAlbums }} rated albums</p>
-  </div>
-  <img class="artistImage" src="{{ .artistImage }}" alt="{{ .artistName }} artist image" />
+<div class="artistCard">
+  <a href="/music/artists/{{ .artistName}}">
+    <div class="artistInfo">
+      <h2>{{ .artistName }}</h2>
+      <p>{{ .artistNumRatedAlbums }} rated albums</p>
+    </div>
+    <img class="artistImage" src="{{ .artistImage }}" alt="{{ .artistName }} artist image" />
+  </a>
 </div>

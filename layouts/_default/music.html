@@ -7,38 +7,52 @@
   {{ .Title }} &ndash; {{ .Site.Title }} {{ end }}
 {{ define "main" }}
 
-  {{ $whichItemsToDisplay := "Albums" }}
-  {{ $howToSortItems := "Rating (High -> Low)" }}
+  {{ $whichItemsToDisplay := .Params.displayOption }}
+  {{ $howToSortItems := .Params.sortMethod }}
   {{ $displayedArtistName := "" }}
   {{ $jsonFile := "albums.json" }}
   {{ $cardPartial := "albumcard.html" }}
   {{ $jsonData := "" }}
 
+  <!-- Dropdowns -->
   <div class="dropdowns">
     <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
       <option>Artists</option>
-      <option selected>Albums</option>
-      <option>Artist's Albums</option>
+      <option>Albums</option>
      </select>
 
      <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
       <option>A-Z</option>
       <option>Z-A</option>
       <option>Random</option>
-      <option selected>Rating (High -> Low)</option>
+      <option>Rating (High -> Low)</option>
       <option>Rating (Low -> High)</option> </select>
   </div>
 
-
+  <!-- Cards -->
   <div class="musicCardGrid">
-  {{ if $displayedArtistName }}
-    {{ $jsonData = (getJSON (printf "/static/music/metadata/%s/%s" $displayedArtistName $jsonFile)).artistAlbums }}
-  {{ else }}
-    {{ $jsonData = getJSON (printf "/static/music/%s" $jsonFile) }}
-  {{ end }}
+    {{ if ne $displayedArtistName "" }}
+      {{ $jsonData = (getJSON "/static/music/metadata/Drake/artist.json").artistAlbums }}
+      {{ range sort $jsonData "albumRating" "desc" }}
+        {{ partial "albumcard.html" . "Artist's Albums" }}
+      {{ end }}
+    {{ else if eq .Params.displayOption "Albums" }}
+      {{ $jsonData = getJSON "/static/music/albums.json" }}
+      {{ range sort $jsonData "albumRating" "desc" }}
+        {{ partial "albumcard.html" . "Albums" }}
+      {{ end }}
+    {{ else if eq .Params.displayOption "Artists" }}
+      {{ $jsonData = getJSON "/static/music/artists.json" }}
+      {{ range $jsonData }}
+        {{ partial "artistcard.html" . "Artists" }}
+      {{ end }}
+    {{ end }}
 
-  {{ range sort $jsonData "albumRating" "desc" }}
-    {{ partial $cardPartial . }}
-  {{ end }}
+    <!-- Script for display changes (sorting, display type) -->
+    {{ $js := resources.Get "js/music.js" | minify | fingerprint }}
+    <script src={{ $js.RelPermalink }}></script>
+    <h1>{{ $whichItemsToDisplay}}</h1>
+    <h1>{{ $howToSortItems }}</h1>
+
   </div>
 {{ end }}

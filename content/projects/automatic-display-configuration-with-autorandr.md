@@ -99,6 +99,6 @@ To save this configuration for later use, we should run the command:
 `autorandr --save docked`
 
 # Conclusion
-With these commands, your laptop should automatically switch between its own display and the HDMI display when you plug in your HDMI cable. If it doesn't do this automatically, simply run the command:
+With these commands, your laptop should automatically switch from its own display and the HDMI display when you plug in your HDMI cable, and vice versa. If it doesn't do this automatically, simply run the command:
 
 `autorandr --load <profile_name>`
