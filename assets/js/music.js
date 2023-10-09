@@ -1,23 +1,23 @@
 const displayOptionsDropdown = document.getElementById("displayOptionsDropdown");
 const sortMethodsDropdown = document.getElementById("sortMethodsDropdown");
 
+// Listner on page load
 document.addEventListener("DOMContentLoaded", function() {
   if (window.location.pathname === "/music/albums/")
   {
-    console.log("albums")
     displayOptionsDropdown.value = "Albums"
     sortMethodsDropdown.value = "Rating (High -> Low)"
+    handleSort(sortMethodsDropdown.value);
   }
   else if (window.location.pathname === "/music/artists/")
   {
-    console.log("artist")
     displayOptionsDropdown.value = "Artists"
     sortMethodsDropdown.value = "Random"
+    handleSort(sortMethodsDropdown.value);
   }
-
-
 });
 
+// Listener for type of card to display
 displayOptionsDropdown.addEventListener('change', function() {
   const selectedValue = displayOptionsDropdown.value;
   if (selectedValue === "Albums")
@@ -30,22 +30,65 @@ displayOptionsDropdown.addEventListener('change', function() {
   }
 });
 
+// Listener for how to sort cards
 sortMethodsDropdown.addEventListener('change', function() {
-  const selectedValue = sortMethodsDropdown.value;
-  console.log(selectedValue);
-  // change sortMethod
+  const newSortMethod = sortMethodsDropdown.value;
+  handleSort(newSortMethod);
 });
 
-function shuffleCards() {
-  const musicCardGrid = document.getElementById("musicCardGrid");
-  const cards = Array.from(musicCardGrid.querySelectorAll(".albumCard"));
+// Card sorting
+function handleSort(newSortMethod) {
+  let musicCardGrid = document.getElementById("musicCardGrid");
+  let toSort = musicCardGrid.children;
+  toSort = Array.prototype.slice.call(toSort, 0);
 
-  for (let i = cards.length - 1; i > 0; i--)
+  if (newSortMethod === "A-Z")
   {
-    const j = Math.floor(Math.random() * (i + 1))
-    [cards[i], cards[j]] = [cards[j], cards[i]];
-    console.log(cards[i]);
+   toSort.sort((a, b) => {
+      if (a.id < b.id) return -1;
+      else if (a.id > b.id) return 1;
+      else return 0;
+    })
+  }
+  else if (newSortMethod === "Z-A")
+  {
+    toSort.sort((a, b) => {
+      if (a.id > b.id) return -1;
+      if (a.id < b.id) return 1;
+      else return 0;
+    })
+  }
+  else if (newSortMethod === "Random")
+  {
+    toSort = toSort
+              .map(value => ({ value, sort: Math.random() }))
+              .sort((a, b) => a.sort - b.sort)
+              .map(({ value }) => value)
+  }
+  else if (newSortMethod === "Rating (High -> Low)")
+  {
+    toSort.sort((a, b) => {
+      if (a.getAttribute("rating") > b.getAttribute("rating")) return -1;
+      else if (a.getAttribute("rating") < b.getAttribute("rating")) return 1;
+      else return 0;
+    })
+  }
+  else if (newSortMethod === "Rating (Low -> High)")
+  {
+    toSort.sort((a, b) => {
+      if (a.getAttribute("rating") < b.getAttribute("rating")) return -1;
+      else if (a.getAttribute("rating") > b.getAttribute("rating")) return 1;
+      else return 0
+    })
   }
 
-  cards.forEach(card => musicCardGrid.appendChild(card));
+  // Clear
+  musicCardGrid.innerHTML = "";
+
+  // Re-populate cards
+  let i = 0;
+  for (l = toSort.length; i < l; i++)
+  {
+    musicCardGrid.appendChild(toSort[i]);
+  }
 }

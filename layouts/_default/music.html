@@ -25,12 +25,13 @@
       <option>A-Z</option>
       <option>Z-A</option>
       <option>Random</option>
-      <option>Rating (High -> Low)</option>
-      <option>Rating (Low -> High)</option> </select>
+      <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
+      <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
+     </select>
   </div>
 
   <!-- Cards -->
-  <div class="musicCardGrid">
+  <div id="musicCardGrid" class="musicCardGrid">
     {{ if ne $displayedArtistName "" }}
       {{ $jsonData = (getJSON "/static/music/metadata/Drake/artist.json").artistAlbums }}
       {{ range sort $jsonData "albumRating" "desc" }}
@@ -51,8 +52,5 @@
     <!-- Script for display changes (sorting, display type) -->
     {{ $js := resources.Get "js/music.js" | minify | fingerprint }}
     <script src={{ $js.RelPermalink }}></script>
-    <h1>{{ $whichItemsToDisplay}}</h1>
-    <h1>{{ $howToSortItems }}</h1>
-
   </div>
 {{ end }}
