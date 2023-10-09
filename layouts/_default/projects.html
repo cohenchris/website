@@ -25,7 +25,7 @@
         <div class="articleMetadata">
           <em>
             <p>
-              Tags: {{ with .Params.tags }}{{ delimit . ", " }}{{ end }}
+              {{ with .Params.tags }}{{ delimit . ", " }}{{ end }}
             </p>
             <p>
               {{ .WordCount }} words, {{ .ReadingTime }} minute read.

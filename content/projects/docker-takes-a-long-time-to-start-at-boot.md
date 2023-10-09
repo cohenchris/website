@@ -6,10 +6,10 @@ tags: ['docker', 'homelab', 'networking']
 showPageTitle: true
 ---
 
-# Description
+## Description
 Docker, by default, waits for the network to be online before running. This may cause the docker daemon to take a bit to start. To solve this, we should remove this dependency.
 
-# Solution
+## Solution
 1. Open the docker systemd service file:
 
 `sudo vim /lib/systemd/system/docker.service`

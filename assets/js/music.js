@@ -10,26 +10,31 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       displayOptionsDropdown.value = "Albums"
       sortMethodsDropdown.value = "Rating (High -> Low)"
-      handleSort(sortMethodsDropdown.value);
+
+      // Hide back button
+      document.getElementById("backButtonLink").style.display = "none";
     }
     else
     {
       displayOptionsDropdown.value = "Artist's Albums"
       sortMethodsDropdown.value = "Rating (High -> Low)"
-      handleSort(sortMethodsDropdown.value);
 
       // Filter albums down by artistName
       const artistName = new URLSearchParams(window.location.search).get("artistName");
       filterAlbumsByArtistName(artistName);
 
-
+      // Show back button
+      console.log(document.getElementById("backButtonLink"));
+      document.getElementById("backButtonLink").style.display = "";
     }
   }
   else if (window.location.pathname === "/music/artists/")
   {
     displayOptionsDropdown.value = "Artists"
     sortMethodsDropdown.value = "Random"
-    handleSort(sortMethodsDropdown.value);
+
+    // Hide back button
+    document.getElementById("backButtonLink").style.display = "none";
   }
   else {
   }
@@ -120,6 +125,7 @@ function handleSort(newSortMethod) {
   }
 }
 
+// Filter displayed albums by artist name
 function filterAlbumsByArtistName(artistName) {
   let musicCardGrid = document.getElementById("musicCardGrid");
   let toFilter = musicCardGrid.children;

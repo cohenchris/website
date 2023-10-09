@@ -6,17 +6,17 @@ tags: []
 showPageTitle: true
 ---
 
-# Installing AutoRandR
+## Installing AutoRandR
 To install autoRandR, execute the following. Note: this may differ based on your package manager.
 
 `paru -Syu autorandr`
 
-# Saving Your Laptop Configuration
+## Saving Your Laptop Configuration
 Before you plug in your monitor for the first time, save the default laptop display settings using this command:
 
 `autorandr --save mobile`
 
-# Configuring XRandR
+## Configuring XRandR
 Once you have plugged your display cable in, you should set the XRandR settings to your liking. For my use case, I want to have my laptop closed, but displaying on my monitor, which is connected using HDMI. I need to do a few things:
 1. Disable the laptop display
 2. Display on the HDMI output
@@ -98,7 +98,7 @@ To save this configuration for later use, we should run the command:
 
 `autorandr --save docked`
 
-# Conclusion
+## Conclusion
 With these commands, your laptop should automatically switch from its own display and the HDMI display when you plug in your HDMI cable, and vice versa. If it doesn't do this automatically, simply run the command:
 
 `autorandr --load <profile_name>`

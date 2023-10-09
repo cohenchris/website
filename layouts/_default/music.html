@@ -31,13 +31,11 @@
      </select>
 
     <!-- Back Button -->
-    {{ if ne $displayedArtistName "" }}
-      <a href="/music/artists">
+      <a href="/music/artists" id="backButtonLink" style="display: none">
         <button class="backButton">
           &lt;- Back to Artists View
         </button>
       </a>
-    {{ end }}
   </div>
 
   <!-- Cards -->
@@ -54,7 +52,7 @@
       {{ end }}
     {{ else if eq .Params.displayOption "Artists" }}
       {{ $jsonData = getJSON "/static/music_data/artists.json" }}
-      {{ range $jsonData }}
+      {{ range shuffle $jsonData }}
         {{ partial "artistcard.html" . "Artists" (dict "displayedArtistName" $displayedArtistName) }}
       {{ end }}
     {{ end }}
