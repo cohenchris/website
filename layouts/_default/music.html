@@ -1,6 +1,6 @@
 {{ define "pageCSS" }}
   {{ $style := resources.Get "css/music.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
 
 {{ define "title" }}
@@ -9,11 +9,11 @@
 
 {{ define "main" }}
 
-  {{ $whichItemsToDisplay := "Artists" }}
+  {{ $whichItemsToDisplay := "Albums" }}
   {{ $howToSortItems := "Rating (High -> Low)" }}
   {{ $displayedArtistName := "" }}
-  {{ $jsonFile := "artists.json" }}
-  {{ $cardPartial := "artistcard.html" }}
+  {{ $jsonFile := "albums.json" }}
+  {{ $cardPartial := "albumcard.html" }}
   {{ $jsonData := "" }}
 
   <div class="dropdowns">
@@ -56,7 +56,7 @@
     {{ $jsonData = getJSON (printf "/static/music/%s" $jsonFile) }}
   {{ end }}
 
-  {{ range $jsonData }}
+  {{ range sort $jsonData "albumRating" "desc" }}
     {{ partial $cardPartial . }}
   {{ end }}
   </div>

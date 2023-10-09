@@ -9,7 +9,7 @@
 
 <!-- global css -->
 {{ $style := resources.Get "css/global.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <!-- favicons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
