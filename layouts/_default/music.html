@@ -60,7 +60,7 @@
     {{ end }}
 
     <!-- Script for display changes (sorting, display type) -->
-    {{ $js := resources.Get "js/music.js" }}
+    {{ $js := resources.Get "js/music.js" | minify | fingerprint }}
     <script src={{ $js.RelPermalink }}></script>
   </div>
 {{ end }}
