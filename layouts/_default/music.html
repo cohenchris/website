@@ -40,12 +40,7 @@
 
   <!-- Cards -->
   <div id="musicCardGrid" class="musicCardGrid">
-    {{ if ne $displayedArtistName "" }}
-      {{ $jsonData = (getJSON "/static/music_data/Drake/artist.json").artistAlbums }}
-      {{ range sort $jsonData "albumRating" "desc" }}
-        {{ partial "albumcard.html" . "Artist's Albums" }}
-      {{ end }}
-    {{ else if eq .Params.displayOption "Albums" }}
+    {{ if eq .Params.displayOption "Albums" }}
       {{ $jsonData = getJSON "/static/music_data/albums.json" }}
       {{ range sort $jsonData "albumRating" "desc" }}
         {{ partial "albumcard.html" . "Albums" }}

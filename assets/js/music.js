@@ -4,39 +4,57 @@ const artistCards = document.querySelectorAll(".artistCard");
 
 // Listner on page load
 document.addEventListener("DOMContentLoaded", function() {
+  // Get Query Params
+  const artistName = new URLSearchParams(window.location.search).get("artistName");
+  const sortMethod = new URLSearchParams(window.location.search).get("sortMethod");
+  let defaultSortMethod = "";
+
   if (window.location.pathname === "/music/albums/")
   {
-    if (window.location.search === "")
-    {
-      displayOptionsDropdown.value = "Albums"
-      sortMethodsDropdown.value = "Rating (High -> Low)"
+    if (artistName === null)
+    { // Normal albums view
+      displayOptionsDropdown.value = "Albums";
+      defaultSortMethod = "Rating (High -> Low)";
 
       // Hide back button
       document.getElementById("backButtonLink").style.display = "none";
     }
     else
-    {
+    { // Albums from a specified artist
       displayOptionsDropdown.value = "Artist's Albums"
-      sortMethodsDropdown.value = "Rating (High -> Low)"
+      defaultSortMethod = "Rating (High -> Low)";
 
       // Filter albums down by artistName
-      const artistName = new URLSearchParams(window.location.search).get("artistName");
       filterAlbumsByArtistName(artistName);
 
       // Show back button
       console.log(document.getElementById("backButtonLink"));
       document.getElementById("backButtonLink").style.display = "";
     }
+
   }
   else if (window.location.pathname === "/music/artists/")
   {
-    displayOptionsDropdown.value = "Artists"
-    sortMethodsDropdown.value = "Random"
+    displayOptionsDropdown.value = "Artists";
+    defaultSortMethod = "Random";
 
     // Hide back button
     document.getElementById("backButtonLink").style.display = "none";
   }
-  else {
+  else
+  { // Location not handled
+    return;
+  }
+
+  // Handle sort methods
+  if (sortMethod === null || sortMethod === defaultSortMethod)
+  { // Default sort method
+    sortMethodsDropdown.value = defaultSortMethod;
+  }
+  else
+  { // User-defined sort method
+    sortMethodsDropdown.value = sortMethod;
+    handleSort(sortMethod);
   }
 });
 
@@ -55,8 +73,24 @@ displayOptionsDropdown.addEventListener('change', function() {
 
 // Listener for how to sort cards
 sortMethodsDropdown.addEventListener('change', function() {
-  const newSortMethod = sortMethodsDropdown.value;
-  handleSort(newSortMethod);
+  // Get URL without query params
+  let url = window.location.href;
+  const urlObj = new URL(url);
+
+  if (urlObj.searchParams.has("sortMethod"))
+  { // if sortMethod exists, modify it
+    urlObj.searchParams.set("sortMethod", sortMethodsDropdown.value);
+  }
+  else
+  { // if sortMethod does not exist, add it
+    urlObj.searchParams.append("sortMethod", sortMethodsDropdown.value);
+  }
+
+  // Set URL to new path, but do not reload (sorts elements in place on page - faster + looks nicer not reloading all items and then sorting)
+  url = urlObj.toString();
+  window.history.pushState(null, null, url);
+
+  handleSort(sortMethodsDropdown.value);
 });
 
 // Listener for displayed artist name
