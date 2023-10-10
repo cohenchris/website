@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python3 ./website-listening-progress-json.py
+
 hugo
 
 mv public/ html/
