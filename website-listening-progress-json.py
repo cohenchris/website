@@ -71,7 +71,7 @@ class Album:
                  albumCover: str):
 
         self.albumTitle = albumTitle                                                            # album name
-        self.albumArtist = albumArtist                                                          # album artist
+        self.albumArtist = albumArtist.replace(".", "")                                         # album artist
         self.albumGenres = ", ".join(albumGenres) if len(albumGenres) > 0 else "[no genres]"    # genres (comma-separated)
         self.albumLabel = albumLabel if albumLabel is not None else "[no label]"                # label released
         self.albumYear = albumYear                                                              # release year
@@ -98,7 +98,7 @@ class Artist:
                  artistAlbums: List[Album],
                  artistImage: str):
 
-        self.artistName = artistName                    # name of artist
+        self.artistName = artistName.replace(".", "")   # name of artist
         self.artistAlbums = artistAlbums                # array of Album objects
         self.artistImage = artistImage                  # uri to image of the artist
         self.artistNumRatedAlbums = len(artistAlbums)   # number of rated albums for this artist
