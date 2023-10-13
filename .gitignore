@@ -1,4 +1,5 @@
 static/music_data/
+content/music/artists/artists_albums/
 public/
 html/
 .env

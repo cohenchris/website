@@ -5,41 +5,32 @@ const artistCards = document.querySelectorAll(".artistCard");
 // Listner on page load
 document.addEventListener("DOMContentLoaded", function() {
   // Get Query Params
-  const artistName = new URLSearchParams(window.location.search).get("artistName");
   const sortMethod = new URLSearchParams(window.location.search).get("sortMethod");
   let defaultSortMethod = "";
 
   if (window.location.pathname === "/music/albums/")
-  {
-    if (artistName === null)
-    { // Normal albums view
-      displayOptionsDropdown.value = "Albums";
-      defaultSortMethod = "Rating (High -> Low)";
+  { // All Albums view
+    displayOptionsDropdown.value = "Albums";
+    defaultSortMethod = "Rating (High -> Low)";
 
-      // Hide back button
-      document.getElementById("backButtonLink").style.display = "none";
-    }
-    else
-    { // Albums from a specified artist
-      displayOptionsDropdown.value = "Artist's Albums"
-      defaultSortMethod = "Rating (High -> Low)";
-
-      // Filter albums down by artistName
-      filterAlbumsByArtistName(artistName);
-
-      // Show back button
-      console.log(document.getElementById("backButtonLink"));
-      document.getElementById("backButtonLink").style.display = "";
-    }
-
+    // Hide back button
+    document.getElementById("backButtonLink").style.display = "none";
   }
   else if (window.location.pathname === "/music/artists/")
-  {
+  { // All Artists View
     displayOptionsDropdown.value = "Artists";
     defaultSortMethod = "Random";
 
     // Hide back button
     document.getElementById("backButtonLink").style.display = "none";
+  }
+  else if (/^\/music\/artists\/.+$/.test(window.location.pathname))
+  { // Artist's Albums View
+    displayOptionsDropdown.value = "Artist's Albums"
+    defaultSortMethod = "Rating (High -> Low)";
+
+    // Show back button
+    document.getElementById("backButtonLink").style.display = "";
   }
   else
   { // Location not handled
@@ -157,32 +148,4 @@ function handleSort(newSortMethod) {
   {
     musicCardGrid.appendChild(toSort[i]);
   }
-}
-
-// Filter displayed albums by artist name
-function filterAlbumsByArtistName(artistName) {
-  let musicCardGrid = document.getElementById("musicCardGrid");
-  let toFilter = musicCardGrid.children;
-  toFilter = Array.prototype.slice.call(toFilter, 0);
-  let filtered = [];
-
-  toFilter.forEach(card => {
-    const cardArtistName = card.getAttribute("artist");
-
-    if (cardArtistName === artistName)
-    {
-      filtered.push(card);
-    }
-  });
-
-  // Clear
-  musicCardGrid.innerHTML = "";
-
-  // Re-populate cards
-  let i = 0;
-  for (l = filtered.length; i < l; i++)
-  {
-    musicCardGrid.appendChild(filtered[i]);
-  }
-
 }

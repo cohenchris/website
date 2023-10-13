@@ -28,12 +28,22 @@ PLEX_TOKEN = os.getenv('PLEX_TOKEN')
 
 # Place that the website expects data to be
 MUSIC_DATA_OUTPUT_DIR = os.getenv("MUSIC_DATA_OUTPUT_DIR")
+ARTISTS_ALBUMS_OUTPUT_DIR = os.getenv("ARTISTS_ALBUMS_OUTPUT_DIR")
 
 account = MyPlexAccount(PLEX_TOKEN)
 session = requests.Session()
 session.verify = False
 requests.packages.urllib3.disable_warnings()
 server = PlexServer(PLEX_URL, PLEX_TOKEN, session)
+
+artists_albums_md_template = lambda artistName: f"""---
+title: "Albums - {artistName}"
+layout: music
+displayOption: "Albums"
+url: "/music/artists/{artistName}"
+artistName: "{artistName}"
+---
+"""
 
 ##################################
 ########## JSON Defines ##########
@@ -207,17 +217,27 @@ def scan_library() -> List[Artist]:
 library = scan_library()
 artists_json = []
 albums_json = []
+artists_albums_json = []
 
+# Create artists_albums dir
+os.chdir(ARTISTS_ALBUMS_OUTPUT_DIR)
+artists_albums_dir = os.path.join(ARTISTS_ALBUMS_OUTPUT_DIR, "artists_albums")
+# Remove existing directory tree, if it exists
+try:
+    shutil.rmtree(artists_albums_dir)
+except FileNotFoundError:
+    pass
+os.mkdir(artists_albums_dir)
+os.chdir(artists_albums_dir)
+
+# Create music_data dir
 os.chdir(MUSIC_DATA_OUTPUT_DIR)
-
 music_data_dir = os.path.join(MUSIC_DATA_OUTPUT_DIR, "music_data")
-
-# Remove existing music directory tree, if it exists
+# Remove existing directory tree, if it exists
 try:
     shutil.rmtree(music_data_dir)
 except FileNotFoundError:
     pass
-
 os.mkdir(music_data_dir)
 os.chdir(music_data_dir)
 
@@ -235,6 +255,11 @@ for artist in library:
         artist.artistImage = urllib.parse.quote(artist.artistImage) # Make paths valid URLs (in case of any special chars)
     # Convert to webp for better performance
     convert_to_webp(artist_image_path)
+
+    # Create Hugo md for artist
+    hugo_artist_md_path = os.path.join(artists_albums_dir, artist.artistName + ".md")
+    with open(hugo_artist_md_path, "w") as f:
+        f.write(artists_albums_md_template(artist.artistName))
 
     for album in artist.artistAlbums:
         # make album directories
@@ -259,6 +284,13 @@ for artist in library:
 
         # Append to albums JSON
         albums_json.append({key: value for key, value in album.__dict__.items()})
+        artists_albums_json.append({key: value for key, value in album.__dict__.items()})
+
+    # Write artist's albums JSON
+    artist_json_path = os.path.join(artist_dir, "albums.json")
+    with open(artist_json_path, "w") as f:
+        f.write(json.dumps(artists_albums_json, default=lambda o: o.__dict__, indent=4, ensure_ascii=True))
+    artists_albums_json = []
 
     # Append to artists JSON
     artists_json.append({key: value for key, value in artist.__dict__.items() if key != "artistAlbums"})
@@ -266,9 +298,8 @@ for artist in library:
 # Write artists.json
 with open("artists.json", "w") as f:
     f.write(json.dumps(artists_json, default=lambda o: o.__dict__, indent=4, ensure_ascii=True))
-# Write albums.json
 
-# Write eligible album JSON to a file
+# Write albums.json
 with open("albums.json", "w") as f:
     f.write(json.dumps(albums_json, default=lambda o: o.__dict__, indent=4, ensure_ascii=True))
 

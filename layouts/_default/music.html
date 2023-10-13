@@ -4,15 +4,17 @@
 {{ end }}
 
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }} {{ end }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
 {{ define "main" }}
 
   {{ $whichItemsToDisplay := .Params.displayOption }}
   {{ $howToSortItems := .Params.sortMethod }}
   {{ $displayedArtistName := "" }}
-  {{ $jsonFile := "albums.json" }}
-  {{ $cardPartial := "albumcard.html" }}
-  {{ $jsonData := "" }}
+  {{ with .Params.artistName }}
+    {{ $displayedArtistName = . }}
+  {{ end }}
 
   <div class="dropdowns">
     <!-- Dropdowns -->
@@ -40,13 +42,18 @@
 
   <!-- Cards -->
   <div id="musicCardGrid" class="musicCardGrid">
-    {{ if eq .Params.displayOption "Albums" }}
-      {{ $jsonData = getJSON "/static/music_data/albums.json" }}
+    {{ if ne $displayedArtistName "" }}
+      {{ $jsonData := getJSON (printf "/static/music_data/%s/albums.json" $displayedArtistName) }}
+      {{ range $jsonData }}
+        {{ partial "albumcard.html" . "Albums" }}
+      {{ end }}
+    {{ else if eq $whichItemsToDisplay "Albums" }}
+      {{ $jsonData := getJSON "/static/music_data/albums.json" }}
       {{ range sort $jsonData "albumRating" "desc" }}
         {{ partial "albumcard.html" . "Albums" }}
       {{ end }}
-    {{ else if eq .Params.displayOption "Artists" }}
-      {{ $jsonData = getJSON "/static/music_data/artists.json" }}
+    {{ else if eq $whichItemsToDisplay "Artists" }}
+      {{ $jsonData := getJSON "/static/music_data/artists.json" }}
       {{ range shuffle $jsonData }}
         {{ partial "artistcard.html" . "Artists" (dict "displayedArtistName" $displayedArtistName) }}
       {{ end }}
