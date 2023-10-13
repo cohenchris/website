@@ -1,5 +1,5 @@
 <div class="artistCard" id={{ .artistName }}>
-  <a class="artistLink" href="/music/artists/{{ .artistName }}">
+  <a class="artistLink" href="{{ printf "/music/artists/%s" (.artistName | safeURL) }}">
     <div class="artistInfo">
       <h2>{{ .artistName }}</h2>
       <p>{{ .artistNumRatedAlbums }} rated albums</p>
