@@ -14,3 +14,5 @@ rm -r /home/phrog/server/config/swag/www/chriscohen.dev/html
 mv html /home/phrog/server/config/swag/www/chriscohen.dev/
 
 cd $starting_dir
+
+echo "Don't forget to commit!"
