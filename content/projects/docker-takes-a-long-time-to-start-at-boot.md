@@ -12,16 +12,24 @@ Docker, by default, waits for the network to be online before running. This may 
 ## Solution
 1. Open the docker systemd service file:
 
-`sudo vim /lib/systemd/system/docker.service`
+```bash
+sudo vim /lib/systemd/system/docker.service
+```
 
 2. Near the top, you should see a line that looks like this:
 
-`After=network-online.target docker.socket firewalld.service containerd.service time-set.target`
+```
+After=network-online.target docker.socket firewalld.service containerd.service time-set.target
+```
 
-3. Remove `network-online.target`
+3. Remove network-online.target
 
-`After=docker.socket firewalld.service containerd.service time-set.target`
+```
+After=docker.socket firewalld.service containerd.service time-set.target
+```
 
 4. Reload systemd daemons
 
-`sudo systemctl daemon-reload`
+```
+sudo systemctl daemon-reload
+```
