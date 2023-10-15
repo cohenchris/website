@@ -1,5 +1,6 @@
 static/music_data/
 content/music/artists/artists_albums/
+static/fonts/terminus.woff2
 public/
 html/
 .env

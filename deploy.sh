@@ -3,6 +3,8 @@
 starting_dir=$(pwd)
 cd "$(dirname "$0")"
 
+# Font subset
+
 python3 ./website-listening-progress-json.py
 
 hugo

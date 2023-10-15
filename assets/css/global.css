@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Terminus";
-  src: url("/fonts/terminus.ttf") format("truetype");
+  src: url("/fonts/terminus.woff2") format("truetype");
   font-display: swap;
 }
 
