@@ -1,5 +1,7 @@
 .posts {
-  padding: 40px;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 li {
@@ -35,4 +37,16 @@ li {
 
 h1 {
   text-align: center;
+}
+
+.projectsSearchBarContainer {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectsSearchBar {
+  width: 300px;
+  height: 35px;
 }

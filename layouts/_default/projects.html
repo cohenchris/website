@@ -5,7 +5,12 @@
 
 {{ define "main" }}
   <h1>Posts</h1>
-  <div class="posts">
+
+  <div class="projectsSearchBarContainer">
+    <input id="projectsSearchBar" type="text" class="projectsSearchBar" placeholder="Search Posts...">
+  </div>
+
+  <div class="posts" id="posts">
     {{ range .Pages }}
       <li class="article">
         <!-- Header -->
@@ -34,5 +39,10 @@
         </div>
       </li>
     {{ end }}
+
+    <!-- Script for searching posts -->
+    {{ $js := resources.Get "js/projects.js" | minify | fingerprint }}
+    <script src={{ $js.RelPermalink }}></script>
+
   </div>
 {{ end }}

@@ -10,3 +10,14 @@ img {
   height: auto;
   width: 500px;
 }
+
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsBackButton {
+  height: 35px;
+  width: 150px;
+  float: right;
+}

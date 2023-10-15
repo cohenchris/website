@@ -7,14 +7,30 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-  {{ if .Params.showPageTitle }}
-    <h1 class="articleTitle">
-      {{ .Title }}
-    </h1>
-  {{ end }}
 
-  <div>
-    {{ .Content }}
+  <div class="articleContainer">
+
+    <!-- Back Button -->
+    {{ if ne .Params.title "About" }}
+    <a href="/projects/">
+      <button class="projectsBackButton">
+        &lt;- Back to Posts
+      </button>
+    </a>
+    {{ end }}
+
+    <div class="articleBody">
+      {{ if .Params.showPageTitle }}
+        <h1 class="articleTitle">
+          {{ .Title }}
+        </h1>
+      {{ end }}
+
+      <div>
+        {{ .Content }}
+      </div>
+    </div>
+
   </div>
 
 {{ end }}
