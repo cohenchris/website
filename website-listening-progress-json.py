@@ -45,6 +45,10 @@ artistName: "{artistName}"
 ---
 """
 
+# These values are determined by inspecting images and looking at rendered size. That's the largest they can be.
+MAX_ALBUM_SIZE=223
+MAX_ARTIST_SIZE=211
+
 ##################################
 ########## JSON Defines ##########
 ##################################
@@ -109,10 +113,9 @@ class Artist:
 ##################################
 ######## Helper Functions ########
 ##################################
-def convert_to_webp(source):
+def convert_to_webp(source, max_size):
     root, ext = os.path.splitext(source)
     destination = root + ".webp"
-
 
     # First, resize image to square, if it is not already
     image = Image.open(source)
@@ -132,10 +135,14 @@ def convert_to_webp(source):
         right = (width + new_dimension) / 2
         bottom = (height + new_dimension) / 2
         image = image.crop((left, top, right, bottom))
-        image.save(source)
+
+    # Next, resize image to max_size x max_size
+    image = image.convert('RGB')
+    image = image.resize((max_size, max_size))
+    image.save(source)
 
     # Convert JPG to webp
-    image.save(destination, format="webp", quality=1)
+    image.save(destination, format="webp", quality=25)
 
     os.remove(source);
 
@@ -254,7 +261,7 @@ for artist in library:
         artist.artistImage = "/music_data/" + artist.artistName + "/image.webp"; # path for Hugo to find the image
         artist.artistImage = urllib.parse.quote(artist.artistImage) # Make paths valid URLs (in case of any special chars)
     # Convert to webp for better performance
-    convert_to_webp(artist_image_path)
+    convert_to_webp(artist_image_path, MAX_ARTIST_SIZE)
 
     # Create Hugo md for artist
     hugo_artist_md_path = os.path.join(artists_albums_dir, artist.artistName + ".md")
@@ -280,7 +287,7 @@ for artist in library:
                 album.albumCover = "/music_data/" + album.albumArtist + "/" + album.albumTitle + "/cover.webp"
                 album.albumCover = urllib.parse.quote(album.albumCover) # Make paths valid URLs (in case of any special chars)
             # Convert to webp for better performance
-            convert_to_webp(album_cover_path)
+            convert_to_webp(album_cover_path, MAX_ALBUM_SIZE)
 
         # Append to albums JSON
         albums_json.append({key: value for key, value in album.__dict__.items()})
