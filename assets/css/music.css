@@ -81,3 +81,12 @@
   text-align: center;
   line-height: 0px;
 }
+
+.artistLink {
+  text-decoration: none;
+  color: black;
+}
+
+.artistLink:hover {
+  color: grey;
+}

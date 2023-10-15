@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   else if (/^\/music\/artists\/.+$/.test(window.location.pathname))
   { // Artist's Albums View
-    displayOptionsDropdown.value = "Artist's Albums"
+    displayOptionsDropdown.value = "Artist's Albums";
     defaultSortMethod = "Rating (High -> Low)";
 
     // Show back button
@@ -54,11 +54,11 @@ displayOptionsDropdown.addEventListener('change', function() {
   const selectedValue = displayOptionsDropdown.value;
   if (selectedValue === "Albums")
   {
-    window.location.href = "/music/albums"
+    window.location.href = "/music/albums/";
   }
   else if (selectedValue === "Artists")
   {
-    window.location.href = "/music/artists";
+    window.location.href = "/music/artists/";
   }
 });
 
