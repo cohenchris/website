@@ -11,6 +11,15 @@ li {
   margin-bottom: 0px;
 }
 
+.articleHeaderLink {
+  text-decoration: none;
+  color: black;
+}
+
+.articleHeaderLink:hover{
+  color: grey;
+}
+
 .articleHeader p {
   margin-top: 0px;
 }

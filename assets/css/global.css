@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Terminus";
   src: url("/fonts/terminus.ttf") format("truetype");
+  font-display: swap;
 }
 
 html,
@@ -16,16 +17,6 @@ body {
   font-family: "Terminus";
   max-width: 800px;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  cursor: pointer;
-  color: grey;
-}
-
 
 img {
   display: block;
@@ -50,9 +41,19 @@ img {
   color: black;
 }
 
-.navLink {
+.navPage {
   list-style: none;
   color: black;
   font-size: 100%;
   margin-right: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+}
+
+.navLink:hover {
+  cursor: pointer;
+  color: grey;
 }
