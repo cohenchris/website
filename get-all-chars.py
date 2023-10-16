@@ -3,9 +3,6 @@
 import os
 import shlex
 
-# Replace 'your_directory_path' with the path to the directory you want to analyze
-directory_path = '.'
-
 # Create a set to store the characters
 char_set = set()
 
@@ -24,7 +21,7 @@ def is_binary(file_path):
     return False
 
 # Iterate through the directory names and file contents
-for root, dirs, files in os.walk(directory_path):
+for root, dirs, files in os.walk("."):
     for dir_name in dirs:
         char_set.update(dir_name)
     for file_name in files:
@@ -40,6 +37,7 @@ for root, dirs, files in os.walk(directory_path):
 # Print the deduplicated list of characters
 deduplicated_chars = shlex.quote("".join(sorted(list(char_set))))
 
+# Create woff2 subset of font characters. Only use characters present in the website.
 os.system(f"pyftsubset terminus.ttf --output-file=static/fonts/terminus.ttf --text={deduplicated_chars}")
 os.system("woff2_compress static/fonts/terminus.ttf")
 os.system("rm static/fonts/terminus.ttf")
