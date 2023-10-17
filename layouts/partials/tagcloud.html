@@ -1,0 +1,5 @@
+<div class="tagCloud">
+  {{ range .Site.Taxonomies.tags.ByCount }}
+    <p class="tagLink">{{ .Name }}</p>
+  {{ end }}
+</div>

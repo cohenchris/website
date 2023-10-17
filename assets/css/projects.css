@@ -40,13 +40,49 @@ h1 {
 }
 
 .projectsSearchBarContainer {
-  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .projectsSearchBar {
-  width: 300px;
+  display: inline-block;
+  border: 1px solid black;
+  height: 37px;
+}
+
+.searchBar {
+  width: 400px;
   height: 35px;
+  border: none;
+  outline: none;
+}
+
+.clearSearchBar {
+  height: 35px;
+  width: 35px;
+  border: none;
+}
+
+.clearSearchBar:hover {
+  cursor: pointer;
+}
+
+.tagCloud {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+}
+
+.tagCloud p {
+  text-decoration: none;
+  color: black;
+  margin: 0px;
+}
+
+.tagCloud p:hover {
+  cursor: pointer;
+  color: grey;
 }

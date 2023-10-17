@@ -20,3 +20,6 @@ title = "Chris Cohen"
   noHl = false
   style = 'friendly'
   tabWidth = 4
+
+[taxonomies]
+  tag = "tags"
