@@ -19,13 +19,26 @@ function searchHandler() {
   });
 }
 
+function tagSearchHandler(tag) {
+  // By default, Hugo adds dashes to make tags more readable
+  tag = tag.replace("-", " ");
+
+  toSearch.forEach(article => {
+    const articleTags = article.querySelector(".articleTags").textContent.split(",").map(item => item.trim());
+
+    const isMatch = articleTags.includes(tag);
+
+    article.hidden = !isMatch;
+  });
+}
+
 const tagLinks = document.querySelectorAll(".tagLink");
 
 // Tag click handler
 tagLinks.forEach(tagLink => {
   tagLink.addEventListener('click', function(event) {
     projectsSearchBar.value = tagLink.textContent;
-    searchHandler();
+    tagSearchHandler(tagLink.textContent);
   });
 });
 

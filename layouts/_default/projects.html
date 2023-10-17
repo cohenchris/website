@@ -34,7 +34,7 @@
         <!-- Metadata -->
         <div class="articleMetadata">
           <em>
-            <p>
+            <p class="articleTags">
               {{ with .Params.tags }}{{ delimit . ", " }}{{ end }}
             </p>
             <p>
@@ -44,10 +44,10 @@
         </div>
       </li>
     {{ end }}
-
-    <!-- Script for searching posts -->
-    {{ $js := resources.Get "js/projects.js" | minify | fingerprint }}
-    <script src={{ $js.RelPermalink }}></script>
-
   </div>
+
+  <!-- Script for searching posts -->
+  {{ $js := resources.Get "js/projects.js" | minify | fingerprint }}
+  <script src={{ $js.RelPermalink }}></script>
+
 {{ end }}
