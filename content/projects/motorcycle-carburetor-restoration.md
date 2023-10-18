@@ -1,7 +1,7 @@
 ---
 title: 'Initial Kawasaki Carburetor Restoration'
 date: 2023-10-16T17:26:28-07:00
-description: 'A post about first restoration of the careburetors on my 1976 Kawasaki KZ400-S2'
+description: 'A post about first restoration of the carburetors on my 1976 Kawasaki KZ400-S2'
 tags: ['motorcycle', 'mechanical', 'carburetors']
 showPageTitle: true
 ---
@@ -34,10 +34,10 @@ Here they are after being cleaned:
 
 TODO
 
-Externally, not much different. I went home, put them on the bike, and shockingly, it fired right up. This was probably the best feeling of this entire restoration. What was not year clear to me - every single piece of rubber on this motorcycle needed replacing. Simply put, rubber is not meant to last. Over time, as it's exposed to UV, heat, wear and tear, and age, the rubber becomes more brittle, and is not as flexible as it once was. These carburetors are suspended between the airbox and engine with rubber manifolds, which were absolutey shot.
+Externally, not much different. I went home, put them on the bike, and shockingly, it fired right up. This was probably the best feeling of this entire restoration. What was not year clear to me - every single piece of rubber on this motorcycle needed replacing. Simply put, rubber is not meant to last. Over time, as it's exposed to UV, heat, wear and tear, and age, the rubber becomes more brittle, and is not as flexible as it once was. These carburetors are suspended between the air box and engine with rubber manifolds, which were absolutely shot.
 
 ## A Sign of Difficulties to Come
 
-Luckily, I could source the manifolds from the carburetor to engine quite easily. Unluckily, the manifolds from the airbox to carburetor were nearly impossible to find. I ended up paying $60 for two pieces of rubber, shipped directly from Japan. To this day, it's the only place online where they can be bought. 
+Luckily, I could source the manifolds from the carburetor to engine quite easily. Unluckily, the manifolds from the air box to carburetor were nearly impossible to find. I ended up paying $60 for two pieces of rubber, shipped directly from Japan. To this day, it's the only place online where they can be bought. 
 
 Unknown to me, this was a huge red flag. Parts for old vehicles can be difficult to find. It all depends on the age and popularity of the vehicle. If you buy an old Honda CB, there will be absolutely no shortage of parts, as they have a cult following. My motorcycle, however, is a bit more obscure. This rubber manifold was my first of many part-sourcing headaches to come.

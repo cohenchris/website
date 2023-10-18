@@ -23,13 +23,13 @@ Carburetors, however, are my strong suit. To ensure a properly working careburet
 
 Once your carburetors are clean and stock, we can check the rest of the fuel system. Make sure that your gas tank is spotless, and all gas that you put into your tank is fresh. If you let the gas spoil, or don't fully clean your tank, bits and pieces of varnish or gunk will leak into your carburetor, potentially causing jet passageways to clog.
 
-Finally, your should ensure that the fuel hoses are fresh and undamaged. Auto part stores have bulk fuel hose in stock for cheap. These hoses should be clamped at either end. Fuel systems (no fuel pump) heavily rely on the precense of a vacuum. Without this vacuum, fuel will not properly flow, and you will starve your engine of fuel.
+Finally, your should ensure that the fuel hoses are fresh and undamaged. Auto part stores have bulk fuel hose in stock for cheap. These hoses should be clamped at either end. Fuel systems (no fuel pump) heavily rely on the presence of a vacuum. Without this vacuum, fuel will not properly flow, and you will starve your engine of fuel.
 
 TODO
 
 ### Air
 
-Air is the easiest part of this entire process. First, check that your airbox is undamaged, and your air filter is clean. That's the easy part.
+Air is the easiest part of this entire process. First, check that your air box is undamaged, and your air filter is clean. That's the easy part.
 
 In the previous section, I mentioned that fuel systems rely on a vacuum to function. Over time, rubber degrades, and will eventually cause vacuum leaks. These can be tough to diagnose and fix, so I always err on the cautious side, and replace if in doubt.
 
@@ -41,9 +41,9 @@ In my opinion, compression is the most nerve-wracking of these 4 points. Bad cyl
 - Compression testing tool
 
 The finger test is my preferred method. If I have some internal engine damage, I don't want to know :D.
-To perform a finger test, stop the flow of fuel, and disconnect both spark plug leads. Take one spark plug out, and place your finger over the cylinder hole. As your crank your engine (kickstart of electric start), your finger should get pushed off of the hole. As a general rule of thumb, if your finger comes off of the hole, you likely have enough compression to start. Do this with all cylinders.
+To perform a finger test, stop the flow of fuel, and disconnect both spark plug leads. Take one spark plug out, and place your finger over the cylinder hole. As your crank your engine (kickstart or electric start), your finger should get pushed off of the hole. As a general rule of thumb, if your finger comes off of the hole, you likely have enough compression to start. Do this with all cylinders.
 
-If you want a more precise measurement, most auto parts stores have compression testers for rent. Follow your specific tool's instructions, but the general process is to disconnect spark plug leads, unscrew one plug, and crank the engine until the max compression is reached. Make note of the value and cylinde rnumber, and perform this test on all cylinders. In your shop manual, there will be a target range for compression.
+If you want a more precise measurement, most auto parts stores have compression testers for rent. Follow your specific tool's instructions, but the general process is to disconnect spark plug leads, unscrew one plug, and crank the engine until the max compression is reached. Make note of the value and cylinder number, and perform this test on all cylinders. In your shop manual, there will be a target range for compression.
 
 TODO
 

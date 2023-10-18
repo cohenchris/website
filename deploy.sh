@@ -4,6 +4,7 @@ starting_dir=$(pwd)
 cd "$(dirname "$0")"
 
 # Font subset
+./get-all-chars.py
 
 python3 ./website-listening-progress-json.py
 
