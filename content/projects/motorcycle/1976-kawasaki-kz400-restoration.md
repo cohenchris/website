@@ -17,3 +17,5 @@ Delivery day came, and again, he started it in front of me. I paid him, he left,
 I admitted defeat, and walked the bike down the ramp of my complex's underground garage.
 
 Shortly after, I bought a full shop manual on eBay, and would come to know every single page. This was the beginning of a very, very long journey. Over a year later, it's still not quite over, and I've endured much more time, pain, and money than I expected, but I wouldn't change a thing. I've learned far more than I ever expected to, and have come to really appreciate the sheer feats of engineering from the 1970s.
+
+![Delivery Day of Motorcycle](/images/motorcycle/delivery-day.webp)

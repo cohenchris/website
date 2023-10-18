@@ -16,7 +16,7 @@ While I was learning, maybe I should have bitten the bullet.
 ## How Carburetors Work
 Anyways, I should start at the beginning. From the shop manual, here is the diagram of these carburetors:
 
-TODO
+![1976 Kawasaki KZ400-S2 Carburetor Assembly Diagram](/images/motorcycle/carburetor-assembly.webp)
 
 A bit overwhelming, to say the least. These are incredibly complicated, precise pieces of equipment. If you don't put them together exactly right, it doesn't run. If any of the fragile, soft brass jets are scratched, it will run terribly. If any of the jet holes are a little bit clogged, it will run terribly. I spent hours watching YouTube videos on carburetors, and became fascinated. I highly recommend watching [this](https://www.youtube.com/watch?v=toVfvRhWbj8) video from SmarterEveryDay, and [this](https://www.youtube.com/watch?v=ZRNfyz1Cgvg) video from FortNine. 
 
@@ -24,15 +24,17 @@ A bit overwhelming, to say the least. These are incredibly complicated, precise 
 
 At first, the carburetors looked like this:
 
-TODO
+![Initial State of Carbs #1](/images/motorcycle/initial-carbs1.webp)
 
-The choke handle was loose, it was rusty all over, and I couldn't get the bike to show any signs of life. Luckily, my mechanic did motorcycle work on the side. I brought them to him, and ended up paying $350 for a full restoration. When I went to pick it up, he told me it was a miracle that the bike started in the first place. He had to soak it in SeaFoam to soften the residue, and only then, he was able to get to work. Jets were inspected, float level was inspected, seals were refreshed, screws were tightened up, and everything was surgically cleaned.
+![Initial State of Carbs #2](/images/motorcycle/initial-carbs2.webp)
+
+The choke handle was loose, it was rusty all over, and I couldn't get the bike to show any signs of life. Luckily, my mechanic does motorcycle work on the side. I brought them to him, and ended up paying $350 for a full cleaning. When I went to pick it up, he told me it was a miracle that the bike started in the first place. He had to soak it in SeaFoam to soften the residue, and only then, he was able to get to work. Jets were inspected, float level was inspected, seals were refreshed, screws were tightened up, and everything was surgically cleaned.
 
 ## First Start
 
 Here they are after being cleaned:
 
-TODO
+![Carbs Cleaned](/images/motorcycle/carbs-cleaned.webp)
 
 Externally, not much different. I went home, put them on the bike, and shockingly, it fired right up. This was probably the best feeling of this entire restoration. What was not year clear to me - every single piece of rubber on this motorcycle needed replacing. Simply put, rubber is not meant to last. Over time, as it's exposed to UV, heat, wear and tear, and age, the rubber becomes more brittle, and is not as flexible as it once was. These carburetors are suspended between the air box and engine with rubber manifolds, which were absolutely shot.
 
