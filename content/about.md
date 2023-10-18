@@ -16,8 +16,8 @@ Professionally, I tend to work between software and hardware, primarily using C,
 
 This project was started from scratch, and is currently present in ROM on the Qualcomm Snapdragon SM8650, and slated to be included with many more upcoming mobile, automotive, and IoT Qualcomm chipsets.
 
-Outside of work, I like to surf and play the cello. I also typically juggle some random project as a pastime - right now, I'm restoring a 1976 Kawasaki KZ400-S2. It was an impulse buy, and I knew absolutely nothing at the beginning, so YouTube has been my savior :). See more at the project page <a href="/projects/motorcycle">here</a>.
+Outside of work, I like to surf and play the cello. I also typically juggle some random project as a pastime - right now, I'm restoring a 1976 Kawasaki KZ400-S2. It was an impulse buy, and I knew absolutely nothing at the beginning, so YouTube has been my savior.
 
-As for tech-related projects, I run a home network which hosts privacy-focused, open-source applications to replace reliance on big tech companies. This started as a COVID hobby, but has evolved into a full 9u server rack and complex network configuration - see more at the project page <a href="/projects/homelab">here</a>.
+As for tech-related projects, I run a home network which hosts privacy-focused, open-source applications to replace reliance on big tech companies. This started as a COVID hobby, but has evolved into a full 9u server rack and complex network configuration.
 
 ![An image of me](/images/me.webp)
