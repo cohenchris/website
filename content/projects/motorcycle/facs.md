@@ -25,8 +25,6 @@ Once your carburetors are clean and stock, we can check the rest of the fuel sys
 
 Finally, your should ensure that the fuel hoses are fresh and undamaged. Auto part stores have bulk fuel hose in stock for cheap. These hoses should be clamped at either end. Fuel systems (no fuel pump) heavily rely on the presence of a vacuum. Without this vacuum, fuel will not properly flow, and you will starve your engine of fuel.
 
-TODO
-
 ### Air
 
 Air is the easiest part of this entire process. First, check that your air box is undamaged, and your air filter is clean. That's the easy part.
