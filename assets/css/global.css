@@ -1,12 +1,13 @@
 @font-face {
-  font-family: "Terminus";
-  src: url("/fonts/terminus.woff2") format("truetype");
+  font-family: "myFont";
+  src:
+    url("/fonts/font.woff2") format("woff2");
   font-display: swap;
 }
 
 html,
 body {
-  font-size: 18px;
+  font-size: 15px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -14,7 +15,7 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: "Terminus";
+  font-family: "myFont";
   max-width: 800px;
 }
 

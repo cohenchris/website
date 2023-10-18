@@ -16,28 +16,31 @@
     {{ $displayedArtistName = . }}
   {{ end }}
 
-  <div class="dropdowns">
-    <!-- Dropdowns -->
-    <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
-      <option>Artists</option>
-      <option>Albums</option>
-      <option disabled>Artist's Albums</option>
-     </select>
+  <div class="dropdownContainer">
+    <div class="dropdowns">
+      <!-- Display Option -->
+      <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
+        <option>Artists</option>
+        <option>Albums</option>
+        <option disabled>Artist's Albums</option>
+       </select>
 
-     <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
-      <option>A-Z</option>
-      <option>Z-A</option>
-      <option>Random</option>
-      <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
-      <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
-     </select>
+      <!-- Sort Method -->
+       <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
+        <option>A-Z</option>
+        <option>Z-A</option>
+        <option>Random</option>
+        <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
+        <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
+       </select>
 
-    <!-- Back Button -->
-      <a href="/music/artists/" id="backButtonLink" style="display: none">
+      <!-- Back Button -->
+      <a href="/music/artists/" id="backButtonLink" style="opacity: 0">
         <button class="musicBackButton">
           &lt;- Back to Artists View
         </button>
       </a>
+    </div>
   </div>
 
   <!-- Cards -->

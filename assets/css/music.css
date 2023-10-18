@@ -4,17 +4,15 @@
   justify-content: center;
 }
 
-.dropdowns * {
-  height: 35px;
-  width: 150px;
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 20px;
+.dropdownContainer {
+  display: flex;
+  justify-content: center;
 }
 
-.musicBackButton {
-  float: right;
+.dropdowns * {
+  height: 35px;
+  width: 250px;
+  margin-bottom: 20px;
 }
 
 .artistCard,
@@ -30,6 +28,7 @@
   margin-left: 5px;
   position: relative;
 }
+
 .artistCard:hover {
   cursor: pointer;
 }
@@ -65,10 +64,11 @@
 }
 
 .albumCoverAndTitle h3 {
+  line-height: 20px;
   text-align: center;
   position: absolute;
   width: 90%;
-  top: 55%;
+  top: 57%;
   left: 50%;
   transform: translateX(-50%);
 }

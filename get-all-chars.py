@@ -2,6 +2,9 @@
 
 import os
 import shlex
+import sys
+
+font_file = sys.argv[1]
 
 # Create a set to store the characters
 char_set = set()
@@ -38,6 +41,6 @@ for root, dirs, files in os.walk("."):
 deduplicated_chars = shlex.quote("".join(sorted(list(char_set))))
 
 # Create woff2 subset of font characters. Only use characters present in the website.
-os.system(f"pyftsubset terminus.ttf --output-file=static/fonts/terminus.ttf --text={deduplicated_chars}")
-os.system("woff2_compress static/fonts/terminus.ttf")
-os.system("rm static/fonts/terminus.ttf")
+os.system(f"pyftsubset ./{font_file} --output-file=static/fonts/font.ttf --text={deduplicated_chars}")
+os.system("woff2_compress static/fonts/font.ttf")
+os.system("rm static/fonts/font.ttf")

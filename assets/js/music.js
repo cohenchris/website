@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     defaultSortMethod = "Rating (High -> Low)";
 
     // Hide back button
-    document.getElementById("backButtonLink").style.display = "none";
+    document.getElementById("backButtonLink").style.opacity = "0";
   }
   else if (window.location.pathname === "/music/artists/")
   { // All Artists View
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     defaultSortMethod = "Random";
 
     // Hide back button
-    document.getElementById("backButtonLink").style.display = "none";
+    document.getElementById("backButtonLink").style.opacity = "0";
   }
   else if (/^\/music\/artists\/.+$/.test(window.location.pathname))
   { // Artist's Albums View
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     defaultSortMethod = "Rating (High -> Low)";
 
     // Show back button
-    document.getElementById("backButtonLink").style.display = "";
+    document.getElementById("backButtonLink").style.opacity = "100";
   }
   else
   { // Location not handled
