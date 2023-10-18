@@ -58,3 +58,8 @@ img {
   cursor: pointer;
   color: grey;
 }
+
+select, button {
+  border-radius: 0px;
+  border: 1px solid black;
+}
