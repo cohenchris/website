@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+.jobTitleDiv {
+  display: inline-block;
+  width: 720px;
+}
+
 .jobTitleText {
   white-space: nowrap;
   width: 0;
@@ -16,6 +21,11 @@
   animation:
     typing-jobTitleText 1.5s steps(40,end) forwards 1s,
     blink-caret .5s step-end 7;
+}
+
+.alumnusDiv {
+  display: inline-block;
+  width: 461px
 }
 
 .alumnusText {
@@ -30,12 +40,12 @@
 
 @keyframes typing-jobTitleText {
   from { width: 0%; }
-  to { width: 90%; }
+  to { width: 100%; }
 }
 
 @keyframes typing-alumnusText {
   from { width: 0%; }
-  to { width: 58%; }
+  to { width: 100%; }
 }
 
 @keyframes blink-caret {
