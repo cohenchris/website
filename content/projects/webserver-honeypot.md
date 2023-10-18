@@ -2,7 +2,7 @@
 title: 'HTTPS Webserver Honeypot in Python'
 date: 2020-05-01
 description: 'An HTTPS honeypot server designed to lure attackers and study attack methodology.'
-tags: ['network', 'security', 'web dev', 'school']
+tags: ['networking', 'security', 'web dev', 'school']
 showPageTitle: true
 ---
 

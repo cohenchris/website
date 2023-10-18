@@ -2,7 +2,7 @@
 title: 'A New Hugo-based Website'
 date: 2023-10-14T08:45:20-07:00
 description: 'A post about my experience rebuilding my website from scratch using the static-site generator, Hugo'
-tags: ['homelab', 'networking', 'selfhost', 'hugo']
+tags: ['homelab', 'networking', 'selfhost', 'hugo', 'web dev']
 showPageTitle: true
 ---
 
