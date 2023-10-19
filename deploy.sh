@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 # Get Resume PNG, convert to webp, and resize
 wget https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png
 convert ChrisCohen_resume.png -resize 798x1128 ChrisCohen_resume.png
-cwebp -q 50 ChrisCohen_resume.png-o static/images/ChrisCohen_resume.webp
+cwebp -q 50 ChrisCohen_resume.png -o static/images/ChrisCohen_resume.webp
 rm ChrisCohen_resume.png
 
 # Sync music listening progress metadata
