@@ -21,7 +21,7 @@
       <!-- Display Option -->
       <select id="displayOptionsDropdown" value="{{ $whichItemsToDisplay }}">
         <option>Artists</option>
-        <option>Albums</option>
+        <option selected>Albums</option>
         <option disabled>Artist's Albums</option>
        </select>
 
@@ -30,7 +30,7 @@
         <option>A-Z</option>
         <option>Z-A</option>
         <option>Random</option>
-        <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
+        <option selected {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
         <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
        </select>
 
