@@ -18,6 +18,7 @@
   <div class="posts" id="posts">
     {{ range .Pages }}
       <li class="article">
+
         <!-- Header -->
         <div class="articleHeader">
           <h3>
@@ -28,7 +29,7 @@
 
         <!-- Summary -->
         <div class="articleSummary">
-        {{ .Params.description }}
+          {{ .Params.description }}
         </div>
 
         <!-- Metadata -->
@@ -42,6 +43,7 @@
             </p>
           </em>
         </div>
+
       </li>
     {{ end }}
   </div>
