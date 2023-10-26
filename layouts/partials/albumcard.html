@@ -1,28 +1,66 @@
-{{ $ratingColor := "" }}
+{{ $albumRatingColor := "" }}
 
 {{ with .albumRating }}
   {{ if lt . 6 }}
-    {{ $ratingColor = "red" }}
+    {{ $albumRatingColor = "red" }}
 
   {{ else if lt . 7.5 }}
-    {{ $ratingColor = "orange" }}
+    {{ $albumRatingColor = "orange" }}
 
   {{ else if lt . 8.5 }}
-    {{ $ratingColor = "lightGreen" }}
+    {{ $albumRatingColor = "limeGreen" }}
 
   {{ else }}
-    {{ $ratingColor = "green" }}
+    {{ $albumRatingColor = "green" }}
 
   {{ end }}
 {{ end }}
 
 <div class="albumCard" id={{ .albumTitle }} rating={{ .albumRating }} artist={{ .albumArtist }}>
-  <div class="albumCoverAndTitle">
-    <img src={{ .albumCover }} alt="{{ .albumTitle }} Album Cover"/>
-    <h3 id="name">{{ .albumTitle }} ({{ .albumYear }})</h3>
+
+  <div class="albumCardInner">
+
+    <!-- Front -->
+    <div class="albumCardFront">
+      <div class="albumCoverAndTitle">
+        <img src={{ .albumCover }} alt="{{ .albumTitle }} Album Cover"/>
+        <h3 id="name">{{ .albumTitle }} ({{ .albumYear }})</h3>
+      </div>
+      <div class="albumInfo">
+        <h4 class="albumInfoArtist">{{ .albumArtist }}</h4>
+        <h4 class="albumInfoRating" style="color : {{ $albumRatingColor }}"> {{ .albumRating }} / 10</h4>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="albumCardBack">
+      <ul class="trackList">
+        {{ range .albumTracks }}
+          {{ $trackRatingColor := "" }}
+          {{ with .trackRating }}
+            {{ if lt . 6 }}
+              {{ $trackRatingColor = "red" }}
+            {{ else if lt . 7.5 }}
+              {{ $trackRatingColor = "orange" }}
+            {{ else if lt . 8.5 }}
+              {{ $trackRatingColor = "limeGreen" }}
+            {{ else }}
+              {{ $trackRatingColor = "green" }}
+            {{ end }}
+          {{ end }}
+
+          {{ $trackRatingString:= printf "%d" (int .trackRating) }}
+
+          <li class="trackNameAndRating" value="{{ $trackRatingString }}">
+            <span class="trackRating" style="color: {{ $trackRatingColor }}">
+              {{ $trackRatingString }}
+            </span>
+            <span class="trackName">{{ .trackName }}</span>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+
   </div>
-  <div class="albumInfo">
-    <h4>{{ .albumArtist }}</h4>
-    <h4 style="color : {{ $ratingColor }}"> {{ .albumRating }} / 10</h4>
-  </div>
+
 </div>

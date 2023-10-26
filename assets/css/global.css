@@ -14,7 +14,7 @@ body {
 }
 
 * {
-  scrollbar-gutter: stable;
+  scrollbar-gutter: stable both-edges;
   box-sizing: border-box;
   font-family: "myFont";
   max-width: 800px;

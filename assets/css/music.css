@@ -22,13 +22,13 @@
 .artistCard,
 .albumCard {
   border: 1px solid #000;
-  background-color: #fff;
   height: 400px;
   width: 250px;
   margin-top: 16px;
   margin-right: 8px;
   margin-left: 8px;
   position: relative;
+  perspective 1000px;
 }
 
 .artistCard:hover {
@@ -52,6 +52,13 @@
   text-align: center;
 }
 
+.albumInfo {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+
 .albumCoverAndTitle img {
   max-width: 90%;
   max-height: 60%;
@@ -70,18 +77,13 @@
   text-align: center;
   position: absolute;
   width: 90%;
-  top: 57%;
+  top: 56%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.albumInfo {
-  width: 100%;
-  max-height: 50%;
-  position: absolute;
-  bottom: 0px;
-  text-align: center;
-  line-height: 0px;
+.albumInfoRating {
+  margin-top: -20px;
 }
 
 .artistLink {
@@ -92,3 +94,67 @@
 .artistLink:hover {
   color: grey;
 }
+
+.trackNameAndRating {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  list-style: none;
+  font-size: 15px;
+}
+
+.trackList li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.trackRating {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 30px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.trackName {
+  max-width: 90%;
+}
+
+.trackList {
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style: none;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.albumCardInner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.35s;
+  origin: center;
+}
+
+.albumCard:hover .albumCardInner {
+  transform: rotateY(180deg);
+}
+
+.albumCardFront,
+.albumCardBack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.albumCardFront {
+  transform: rotateY(0deg);
+}
+
+.albumCardBack {
+  text-align: left;
+  transform: rotateY(180deg);
+  overflow: auto;
+}
+
