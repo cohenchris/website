@@ -6,7 +6,7 @@ layout: single
 
 # Hi, I'm Chris Cohen
 
-I graduated from Purdue University in May 2021 with a B.S. in Computer Science, emphasizing software engineering and computer security. I currently work for Qualcomm in San Diego, CA as a software security engineer.
+I graduated from Purdue University in May 2021 with a B.S. in Computer Science, emphasizing software engineering and computer security. I currently work for Qualcomm in San Diego, CA as a senior software security engineer.
 
 Professionally, I tend to work between software and hardware, primarily using C, C++, and x86 Assembly. At Qualcomm, I've spearheaded a project in ROM that aims to provide a device unique, verifiable Boot Certificate Chain (BCC), which is used to support a wide variety of features, including:
 
