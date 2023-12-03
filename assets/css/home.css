@@ -10,10 +10,11 @@
 
 .jobTitleDiv {
   display: inline-block;
-  width: 720px;
+  width: 791px;
 }
 
 .jobTitleText {
+  font-size: 28px;
   white-space: nowrap;
   width: 0;
   overflow: hidden;
@@ -25,10 +26,11 @@
 
 .alumnusDiv {
   display: inline-block;
-  width: 461px
+  width: 446px;
 }
 
 .alumnusText {
+  font-size: 28px;
   overflow: hidden;
   white-space: nowrap;
   width: 0;
