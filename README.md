@@ -15,7 +15,7 @@ Hugo
 
 1. Builds a production-optimized website
 2. Creates the music library JSON to be interpreted for the music page.
-3. Copies the entire production-built directory to my webserver's serving directory on my nginx server.
+3. Copies the entire production-built directory to nginx's serving directory on my machine.
 
 
 The updated website will immediately be available. Since this is a static website, rather than a website that uses a database, system downtime is not a requirement to deploy.
