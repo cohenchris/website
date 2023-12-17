@@ -18,7 +18,7 @@ Hugo
 3. Copies the entire production-built directory to nginx's serving directory on my machine.
 
 
-The updated website will immediately be available. Since this is a static website, rather than a website that uses a database, system downtime is not a requirement to deploy.
+The updated website will immediately be available. Since this is a static website, rather than a website that uses a database, there is zero system downtime between deployments.
 
 ## Content
 ### Home
