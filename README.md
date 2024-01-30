@@ -1,5 +1,5 @@
 # Personal Website
-As of October 2023, I've decided to overhaul my website, moving from my ReactJS-based approach to a minimal, statically-generated, bloat-free Hugo-based approach. The entire website (excluding music photos) is under 2MB.
+As of October 2023, I've decided to overhaul my website, moving from my ReactJS-based approach to a minimal, statically-generated, bloat-free Hugo-based approach. The entire website (excluding photos) is under 2MB.
 The primary motivation is to start a blog focusing on documenting my endless homelab tinkering.
 ReactJS, while pretty, is tedious to use if you'd like to add a brand new page for each blog post (at least, the way I had it set up).
 Additionally, the `react-router` plugin for ReactJS, which allows routing to different pages, has one large inherent flaw.
