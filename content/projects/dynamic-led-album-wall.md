@@ -89,7 +89,7 @@ First - if I wanted a constant ambient RGB animation, I would need to create a d
 
 I had a few different global variables to keep track of the current state of the display, including currently displayed album (if any), and variables to keep track of whether or not the ambient RGB thread was running.
 
-It was at this point that I realized that Flask is multithreaded by default. Moreover, global state variables are not kept between requests to the API endpoint - every request gets a clean slate, so I was seeing all sorts of inexplicable issues. Sometimes, there would be two ambient RGB threads at once, which created a seizure-inducing display.
+It was at this point I realized that Flask is multithreaded by default. Moreover, global state variables are not kept between requests to the API endpoint - every request gets a clean slate, so I was seeing all sorts of inexplicable issues. Sometimes, there would be two ambient RGB threads at once, which created a seizure-inducing display.
 
 I am embarrassed to say that I spent many hours of time trying to fix this issue. Fix attempts included:
 - Using a SQLite database to keep track of global variables

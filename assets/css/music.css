@@ -99,7 +99,7 @@
   display: grid;
   grid-template-columns: 20% 80%;
   list-style: none;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .trackList li:not(:last-child) {
