@@ -22,7 +22,7 @@ The updated website will immediately be available. Since this is a static websit
 
 ## Content
 ### Home
-A simple home page with my name, picture, job title, and welcome message.
+A simple home page with my name and job title.
 ### Resume
 An image of my most up-to-date resume from Github, plus a link to download the full PDF.
 ### Projects
