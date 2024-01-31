@@ -3,6 +3,12 @@
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
 
+{{ define "rssFeed" }}
+  {{ with .OutputFormats.Get "rss" }}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ end }}
+{{ end }}
+
 {{ define "main" }}
   <h1>Posts</h1>
 

@@ -5,6 +5,10 @@
   <!-- custom page-specific css -->
   {{ block "pageCSS" . }}
   {{ end }}
+
+  <!-- RSS Feed for the page, if it exists -->
+  {{ block "rssFeed" . }}
+  {{ end }}
 </head>
 
 <html>
