@@ -5,18 +5,56 @@
   align-items: center;
   text-align: center;
   height: 70vh;
+  margin: 0;
+}
+
+.jobTitleDiv, .alumnusDiv {
+  display: inline-block;
 }
 
 .jobTitleDiv {
-}
-
-.jobTitleText {
-  font-size: 28px;
+  width: 777px;
 }
 
 .alumnusDiv {
+  width: 433px;
+}
+
+.jobTitleText, .alumnusText {
+  font-size: 28px;
+  border-right: 3px solid transparent;    /* Cursor */
+  padding-left: 3px;                      /* Even out spacingfrom cursor being on the right */
+  white-space: nowrap;                    /* Keep all text in one line */
+  width: 0;                               /* Hide text at the beginning. Typing animation will reveal it. */
+  overflow: scroll;                       /* Overflowing text will be hidden, but scrollable */
+  -ms-overflow-style: none;               /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;                  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.jobTitleText::-webkit-scrollbar, .albumnusText::-webkit-scrollbar {
+  display: none;
+}
+
+/** Typewriter animations for both text sections */
+.jobTitleText {
+  animation:
+    blinking-cursor .5s step-end 7,
+    typing 1.5s steps(40,end) forwards 1s;
 }
 
 .alumnusText {
-  font-size: 28px;
+  animation:
+    blinking-cursor .5s step-end 6 3.5s,
+    typing 1s steps(40,end) forwards 4.5s;
+}
+
+@keyframes typing {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes blinking-cursor {
+  from,to { border-color: black; }
+  50% { border-color: transparent; }
 }
