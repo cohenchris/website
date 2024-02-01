@@ -33,6 +33,11 @@
           <p>{{ .Date.Format "January 2, 2006" }}</p>
         </div>
 
+        <!-- Preview Photo -->
+        {{ with .Params.preview }}
+          <img class="articlePreview" src="{{ . | absURL }}"/>
+        {{ end }}
+
         <!-- Summary -->
         <div class="articleSummary">
           {{ .Params.description }}
@@ -41,12 +46,18 @@
         <!-- Metadata -->
         <div class="articleMetadata">
           <em>
-            <p class="articleTags">
-              {{ with .Params.tags }}{{ delimit . ", " }}{{ end }}
-            </p>
-            <p>
-              {{ .WordCount }} words, {{ .ReadingTime }} minute read.
-            </p>
+            <div class="articleTagSelector">
+            {{ with .Params.tags }}
+              {{ range . }}
+                <p class="tagLink">{{ . }}</p>
+              {{ end }}
+            {{ end }}
+            </div>
+            <div>
+              <p>
+                {{ .WordCount }} words, {{ .ReadingTime }} minute read.
+              </p>
+            </div>
           </em>
         </div>
 

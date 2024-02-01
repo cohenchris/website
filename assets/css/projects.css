@@ -1,16 +1,27 @@
+h1 {
+  text-align: center;
+}
+
 .posts {
   padding-top: 10px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 35px;
+  padding-left: 35px;
   border-top: 1px solid black;
 }
 
-li {
+.article {
   list-style-type: none;
-  margin-bottom: 50px;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  margin-bottom: 30px;;
+}
+
+.article * {
+  padding: 0;
 }
 
 .articleHeader h3 {
+  font-size: 20px;
   margin-bottom: 0px;
 }
 
@@ -27,17 +38,24 @@ li {
   margin-top: 0px;
 }
 
+.articlePreview {
+  max-width: 500px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .articleSummary {
   margin-bottom: 30px;
 }
 
 .articleMetadata {
   line-height: 1px;
+  margin-bottom: 0px;
   font-size: 15px;
 }
 
-h1 {
-  text-align: center;
+.articleMetadata div {
+  line-height: 10px;
 }
 
 .projectsSearchBarContainer {
@@ -84,7 +102,19 @@ h1 {
   margin: 0px;
 }
 
-.tagCloud p:hover {
+.tagLink:hover {
   cursor: pointer;
   color: grey;
+}
+
+.articleTagSelector .tagLink {
+  display: inline;
+  font-weight: bold;
+}
+
+.articleTagSelector .tagLink:not(:first-child) {
+  margin-left: 5px; 
+  padding-left: 10px;
+  border-left: 1px solid black;
+  border-height: 50%;
 }

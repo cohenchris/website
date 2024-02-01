@@ -1,5 +1,5 @@
 ---
-title: 'A Guide on Getting a Vehicle Running - FACS'
+title: 'How to Start an Engine - FACS'
 date: 2023-10-16T18:01:51-07:00
 description: 'A short guide on how to get a vehicle running using FACS - fuel, air, compression, spark.'
 tags: ['motorcycle', 'mechanical']

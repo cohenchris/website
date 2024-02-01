@@ -5,7 +5,7 @@ description: 'A minimalist budgeting app for Android, designed for people who wa
 tags: ['android', 'finance']
 showPageTitle: true
 ---
-[![F-Droid Icon](https://fdroid.gitlab.io/artwork/badge/get-it-on.png)](http://f-droid.org/en/packages/com.cohenchris.weeklybudget/)
+[![F-Droid Icon](/images/fdroid.webp)](https://f-droid.org/en/packages/com.cohenchris.weeklybudget/)
 
 ## Forking WalletCount
 For this project, I forked [WalletCount](https://github.com/GittyMac/WalletCount)

@@ -24,7 +24,12 @@ function tagSearchHandler(tag) {
   tag = tag.replace("-", " ");
 
   toSearch.forEach(article => {
-    const articleTags = article.querySelector(".articleTags").textContent.split(",").map(item => item.trim());
+    const articleTagItems = article.querySelectorAll(".tagLink");
+    const articleTags = Array.from(articleTagItems).map( item => {
+      return item.textContent;
+    });
+
+    console.log(articleTags);
 
     const isMatch = articleTags.includes(tag);
 

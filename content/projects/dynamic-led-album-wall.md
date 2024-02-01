@@ -4,6 +4,7 @@ date: 2024-01-29T14:15:02-08:00
 description: 'An article on the process of building my dynamic LED album wall, integrated with Plex'
 tags: ['homelab', 'linux', 'raspberry-pi', 'leds', 'plex', 'music']
 showPageTitle: true
+preview: '/images/dynamic-led-album-wall/setup.webp'
 ---
 ![Setup](/images/dynamic-led-album-wall/demo.gif)
 
