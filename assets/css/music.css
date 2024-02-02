@@ -103,6 +103,8 @@
 }
 
 .trackList li:not(:last-child) {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
   border-bottom: 1px solid black;
 }
 
@@ -113,10 +115,6 @@
   width: 30px;
   padding-right: 10px;
   border-right: 1px solid black;
-}
-
-.trackName {
-  max-width: 90%;
 }
 
 .trackList {
@@ -153,8 +151,14 @@
 }
 
 .albumCardBack {
+  padding: 5%;
   text-align: left;
   transform: rotateY(180deg);
-  overflow: auto;
+  overflow-y: scroll;
+  -ms-overflow-style: none;   /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;      /* Hide scrollbar for Firefox */
 }
 
+.albumCardBack::-webkit-scrollbar {
+  display: none;
+}
