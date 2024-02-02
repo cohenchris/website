@@ -2,7 +2,7 @@
 title: 'Automatic Display Configuration with AutoRandR'
 date: 2023-10-08T20:03:10-07:00
 description: 'An article about how to configure the tool "autorandr", which allows you to automatically set display options when certain events happen.'
-tags: []
+tags: ['linux', 'os']
 showPageTitle: true
 ---
 

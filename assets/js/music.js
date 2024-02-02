@@ -149,3 +149,17 @@ function handleSort(newSortMethod) {
     musicCardGrid.appendChild(toSort[i]);
   }
 }
+
+function toggleCardFlip(card) {
+  var parentCard = card.parentElement;
+  if (parentCard.classList.contains("flip")) {
+    console.log("removing!")
+    parentCard.classList.remove("flip");
+  }
+  else {
+    console.log("adding!")
+    parentCard.classList.add("flip");
+  }
+
+  console.log(card);
+}

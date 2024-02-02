@@ -12,11 +12,16 @@
 .dropdowns * {
   height: 35px;
   width: 250px;
+  margin-bottom: 10px;
 }
 
-#sortMethodsDropdown{
-  margin-right: 8px;
-  margin-left: 8px;
+@media (max-width: 800px) {
+  .dropdowns {
+    display: flex;  
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .artistCard,
@@ -24,9 +29,9 @@
   border: 1px solid #000;
   height: 400px;
   width: 250px;
-  margin-top: 16px;
-  margin-right: 8px;
-  margin-left: 8px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
   position: relative;
   perspective 1000px;
 }
@@ -134,9 +139,18 @@
   origin: center;
 }
 
-.albumCard:hover .albumCardInner {
-  transform: rotateY(180deg);
+@media (max-width: 800px) {
+  .albumCard.flip .albumCardInner {
+    transform: rotateY(180deg);
+  }
 }
+
+@media (min-width: 800px) {
+  .albumCard:hover .albumCardInner {
+    transform: rotateY(180deg);
+  }
+}
+
 
 .albumCardFront,
 .albumCardBack {

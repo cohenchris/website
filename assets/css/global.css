@@ -11,6 +11,8 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 * {
@@ -28,15 +30,28 @@ img {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   background-color: white;
   color: white;
   margin-bottom: 50px;
 }
 
+@media (max-width: 800px) {
+  * {
+    max-width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navBrand {
+    text-align: center;
+  }
+}
+
 .navBrand {
-  justify-content: left;
   list-style: none;
   font-size: 200%;
   width: 100%;
@@ -51,6 +66,7 @@ img {
 }
 
 .navLink {
+  display: block;
   text-decoration: none;
   color: black;
 }
