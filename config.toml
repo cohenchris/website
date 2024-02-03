@@ -5,6 +5,9 @@ title = "Chris Cohen"
 [params]
   favicon="/favicon.svg"
   stylesheet="/css/global.css"
+  [params.author]
+    email = "chris@chriscohen.dev"
+    name = "Chris Cohen"
 
 [markup]
   [markup.highlight]

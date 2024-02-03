@@ -10,7 +10,17 @@
 {{ end }}
 
 {{ define "main" }}
-  <h1>Posts</h1>
+  <div class="projectsHeader">
+    <h1>
+      Posts
+    </h1>
+
+    {{ with .OutputFormats.Get "rss" }}
+      {{ printf `<a rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end }}
+      <img src="/icons/rss.webp"/>
+    </a>
+  </div>
 
   <div class="projectsSearchBarContainer">
     <div class="projectsSearchBar">

@@ -1,5 +1,11 @@
-h1 {
-  text-align: center;
+.projectsHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectsHeader a {
+  margin-left: 10px;
 }
 
 .posts {
