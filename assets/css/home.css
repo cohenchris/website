@@ -1,17 +1,14 @@
 .mainHeader {
+  height: 70vh;             /* Put header at 70% viewport height */
+  flex-direction: column;   /* Ensure job title and alumnus text are rendered in a column */
+  /* Centering */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 70vh;
-  margin: 0;
 }
 
-.jobTitleDiv, .alumnusDiv {
-  display: inline-block;
-}
-
+/* These widths need to be so exact to ensure that the cursor starts at the very beginning of the line. If this is not done, the cursor will start at the center. */
 .jobTitleDiv {
   width: 779px;
 }
@@ -21,14 +18,14 @@
 }
 
 .jobTitleText, .alumnusText {
-  font-size: 28px;
+  font-size: 28px;  /* Adjusted because job title was being cut off */
 }
 
-/** Typewriter animations for both text sections */
+/** Typewriter animations for both text sections - DESKTOP ONLY */
 @media (min-width: 800px) {
   .jobTitleText, .alumnusText {
     border-right: 3px solid transparent;    /* Cursor */
-    padding-left: 3px;                      /* Even out spacingfrom cursor being on the right */
+    padding-left: 5px;                      /* Even out spacing from cursor being on the right. Don't ask me why it's 5px instead of 3px - that was what prevented the shifting after typing animation finishes. */
     white-space: nowrap;                    /* Keep all text in one line */
     width: 0;                               /* Hide text at the beginning. Typing animation will reveal it. */
     overflow: scroll;                       /* Overflowing text will be hidden, but scrollable */
@@ -41,12 +38,17 @@
     display: none;
   }
 
+  /* Cursor and typing animations for job title text. */
   .jobTitleText {
     animation:
       blinking-cursor .5s step-end 7,
       typing 1.5s steps(40,end) forwards 1s;
   }
 
+  /*
+   * Cursor and typing animations for alumnus text.
+   * The timings are to emulate the 'typer' pressing enter and beginning to type on a new line.
+   */
   .alumnusText {
     animation:
       blinking-cursor .5s step-end 6 3.5s,
@@ -54,11 +56,14 @@
   }
 }
 
+/* KEYFRAME ANIMATIONS */
+/* Reveal element as if you were typing */
 @keyframes typing {
   from { width: 0%; }
   to { width: 100%; }
 }
 
+/* Infinite cursor blinking */
 @keyframes blinking-cursor {
   from,to { border-color: black; }
   50% { border-color: transparent; }

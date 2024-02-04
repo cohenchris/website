@@ -1,22 +1,26 @@
 .articleTitle {
-  text-align: center;
-  font-size: 35px;
-  font-weight: normal;
-  border-bottom: 1px solid black;
-  padding-bottom: 20px;
+  text-align: center;             /* Center title */
+  font-size: 35px;                /* Increase size of title */
+  font-weight: normal;            /* Headers are bolded by default, don't want that */
+  border-bottom: 1px solid black; /* Dividing border between title and article */
+  padding-bottom: 20px;           /* Dividing padding to give the title space to breathe */
 }
 
-img {
-  height: auto;
-}
-
+/* Ensure that the article and back button are in a column, placing the button on top. */
 .articleContainer {
   display: flex;
   flex-direction: column;
+  position: relative;     /* Position article container relative to its normal position */
 }
 
 .projectsBackButton {
-  height: 35px;
-  width: 150px;
-  float: right;
+  width: 150px;           /* Prevents button from expanding to the max width */
+  float: right;           /* Lock to the right */
+  position: absolute;     /* Position button to nearest positioned ancestor (.articleContainer) */
+  top: 0;                 /* Position at the top of the container */
+  right: 0;               /* Position at the right of the container */
+}
+
+.projectsBackButtonContainer {
+  margin-bottom: 20px;    /* Give some space to the article title */
 }

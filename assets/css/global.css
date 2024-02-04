@@ -1,3 +1,7 @@
+/***********************************
+ *            GENERAL
+ ***********************************/
+/* Custom minimized font subset */
 @font-face {
   font-family: "myFont";
   src:
@@ -7,27 +11,50 @@
 
 html,
 body {
-  font-size: 15px;
+  font-size: 15px;      /* Global default font size */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+
+  /* For browsers that are not wide, this gives some breathing room */
   padding-left: 5px;
   padding-right: 5px;
 }
 
 * {
-  scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable both-edges;  /* This reserves space on both sides for the scrollbar. Without this, centering is slightly off */
   box-sizing: border-box;
   font-family: "myFont";
-  max-width: 800px;
+  max-width: 800px;                     /* Global max width for site */
 }
 
+/* Centers images by default */
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* General select/button styling */
+select, button, input {
+  border-radius: 0px;
+  border: 1px solid black;
+  height: 35px;
+}
+
+button, button a{
+  text-decoration: none;
+  color: black;
+}
+
+button:hover, button a:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+/***********************************
+ *            NAVBAR
+ ***********************************/
 .navbar {
   display: flex;
   flex-direction: row;
@@ -38,27 +65,33 @@ img {
   padding-bottom: 25px;
 }
 
+/* Desktop mode (large browsers) */
 @media (min-width: 800px) {
   .navPage {
-    margin-left: 15px;
+    margin-left: 15px;  /* Makes the navbar links nicely spaced out */
   }
 }
 
+/* Mobile mode (small browsers) */
 @media (max-width: 800px) {
+  /* Prevents overflow of elements on browsers with width less than 800px */
   * {
     max-width: 100%;
   }
 
+  /* Swap navbar from horizontal to vertical orientation + add separation border */
   .navbar {
     flex-direction: column;
     border-bottom: 1px solid black;
   }
 
+  /* Center brand at the top */
   .navBrand {
     text-align: center;
   }
 }
 
+/* Brand styling */
 .navBrand {
   list-style: none;
   font-size: 200%;
@@ -66,24 +99,22 @@ img {
   color: black;
 }
 
+/* Page link styling */
 .navPage {
   list-style: none;
   color: black;
   font-size: 120%;
 }
 
+/* Link to something on the navbar (either brand OR page link) */
 .navLink {
   display: block;
   text-decoration: none;
   color: black;
 }
 
+/* Highlight link on hover */
 .navLink:hover {
   cursor: pointer;
   color: grey;
-}
-
-select, button {
-  border-radius: 0px;
-  border: 1px solid black;
 }

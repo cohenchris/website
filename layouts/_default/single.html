@@ -12,14 +12,17 @@
 
     <!-- Back Button -->
     {{ if ne .Params.title "About" }}
-    <a href="/projects/">
-      <button class="projectsBackButton">
-        &lt;- Back to Posts
-      </button>
-    </a>
+      <div class="projectsBackButtonContainer">
+        <button class="projectsBackButton">
+          <a href="/projects/">
+            &lt;- Back to Posts
+          </a>
+        </button>
+      </div>
     {{ end }}
 
     <div class="articleBody">
+
       {{ if .Params.showPageTitle }}
         <h1 class="articleTitle">
           {{ .Title }}
@@ -29,6 +32,7 @@
       <div>
         {{ .Content }}
       </div>
+
     </div>
 
   </div>

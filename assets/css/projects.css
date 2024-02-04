@@ -1,108 +1,99 @@
+/* Center "Posts" */
 .projectsHeader {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.projectsHeader a {
-  margin-left: 10px;
+.rssIcon {
+  margin-left: 10px;            /* Give some space between "Posts" and RSS Icon */
+}
+
+.rssIcon:hover {
+  filter: grayscale(100%);      /* Turn icon grey on hover */
 }
 
 .posts {
-  padding-top: 10px;
+  border-top: 1px solid black;  /* Separate posts and tag cloud */
+
+  /* Limit width of posts by a bit, more visually appealing */
   padding-right: 35px;
   padding-left: 35px;
-  border-top: 1px solid black;
 }
 
 .article {
-  list-style-type: none;
-  border-bottom: 1px solid black;
-  padding-bottom: 20px;
-  margin-bottom: 30px;;
-}
-
-.article * {
-  padding: 0;
+  list-style-type: none;          /* No bullet points */
+  border-bottom: 1px solid black; /* Divide each article from the next */
 }
 
 .articleHeader h3 {
-  font-size: 20px;
-  margin-bottom: 0px;
+  font-size: 20px;                /* Increase font size for article title */
+  margin-bottom: 0px;             /* Put title right next to date */
 }
 
 .articleHeaderLink {
-  text-decoration: none;
+  text-decoration: none;          /* No ugly <a> blue highlight/underline */
   color: black;
 }
 
 .articleHeaderLink:hover{
-  color: grey;
+  color: grey;                    /* Make title grey on hover */
 }
 
 .articleHeader p {
-  margin-top: 0px;
+  margin-top: 0px;                /* Put date right next to title */
 }
 
+/* Spacing between preview image and article description */
 .articlePreview {
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
 .articleSummary {
-  margin-bottom: 30px;
-}
-
-.articleMetadata {
-  margin-bottom: 0px;
-  font-size: 15px;
+  margin-bottom: 30px;            /* Space between description and metadata */
 }
 
 .projectsSearchBarContainer {
+  margin-bottom: 30px;            /* Give space to the tag cloud */
+
+  /* Center search bar */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .projectsSearchBar {
-  position: relative;
-  display: inline-block;
-  border: 1px solid black;
+  position: relative;             /* Position search container relative to its normal position */
+  display: inline-block;          /* Horizontally place items in this container */
+  border: 1px solid black;        /* Border around search bar */
 }
 
 .searchBar {
   width: 400px;
-  height: 35px;
-  border: none;
-  outline: none;
+  border: none;                   /* Get rid of default border. We want to border both the search bar AND 'X' button. */
 }
 
 .clearSearchBar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
+  position: absolute;             /* Position button to nearest positioned ancestor (.projectsSearchBar) */
+  right: 0;                       /* Place at the very right of container */
+  top: 0;                         /* Place at the very top of container */
   width: 35px;
-  border: none;
-}
-
-.clearSearchBar:hover {
-  cursor: pointer;
+  border: none;                   /* We don't want a border, that will be taken care of by .projectsSearchBar */
 }
 
 .tagCloud {
-  display: grid;
-  place-items: center;
+  display: grid;                  /* Display the tags in a grid */
+  place-items: center;            /* Center items for visual appeal */
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 5px;
-  margin-bottom: 30px;
+  grid-gap: 5px;                  /* 5px gap between each element in the grid */
+  margin-bottom: 30px;            /* Space things out */
 }
 
 .tagCloud p {
-  text-decoration: none;
+  text-decoration: none;          /* No ugly <a> blue highlight/underline */
   color: black;
-  margin: 0px;
+  margin: 0px;                    /* Constrain to just the size of the text */
 }
 
 .tagLink:hover {
@@ -110,25 +101,12 @@
   color: grey;
 }
 
-.articleTagSelector p {
-  padding: 0;
-  overflow: auto;
-}
-
 .articleTagSelector .tagLink {
-  display: inline;
-  font-weight: bold;
+  display: inline;                /* Display all article tags in a row */
+  font-weight: bold;              /* Bold each tag */
 }
 
 .articleTagSelector .tagLink:not(:last-child) {
-  border-right: 1px solid black;
-  margin-right: 5px; 
-  padding-right: 10px;
-  border-height: 50%;
-}
-
-@media (max-width: 800px) {
-  .articleTagSelector .tagLink {
-    border-left: none;
-  }
+  border-right: 1px solid black;  /* Add border seperator between items */
+  padding-right: 10px;            /* Space out tags */
 }
