@@ -1,5 +1,5 @@
 ---
-title: 'Replacement of Wheel Bearings and Unexpected Brake Overhaul'
+title: 'Replacement of Wheel Bearings and An Unexpected Brake Overhaul'
 date: 2024-02-03T16:43:30-08:00
 description: ''
 tags: ['motorcycle', 'mechanical', 'bearings', 'brakes']

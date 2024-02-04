@@ -1,5 +1,5 @@
 ---
-title: 'Magic Smoke and Being Forced To Re-Wire a Motorcycle'
+title: 'How To Re-Wire a Motorcycle'
 date: 2024-02-03T15:53:56-08:00
 description: 'I nearly started a fire with my rocky start to motorcycle restoration.'
 tags: ['motorcycle', 'electrical']

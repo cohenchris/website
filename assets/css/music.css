@@ -3,8 +3,8 @@
  ***********************************/
 .musicCardGrid {
   display: flex;
-  flex-wrap: wrap;          /* When items overflow, wrap them to the next line */
-  justify-content: center;  /* Center albums */
+  flex-wrap: wrap;                  /* When items overflow, wrap them to the next line */
+  justify-content: center;          /* Center albums */
 }
 
 /***********************************
@@ -17,17 +17,15 @@
 }
 
 .dropdowns * {
-  width: 250px;             /* Make width same as cards */
-  margin-bottom: 10px;      /* Give some space between dropdowns and albums */
+  width: 250px;                     /* Make width same as cards */
+  margin-bottom: 10px;              /* Give some space between dropdowns and albums */
 }
 
-/* On mobile, distribute the dropdowns in a column, instead of in a row */
 @media (max-width: 800px) {
   .dropdowns {
-    display: flex;  
+    /* On mobile, distribute the dropdowns in a column instead of in a row */
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
@@ -36,165 +34,146 @@
  ***********************************/
 .artistCard,
 .albumCard {
-  border: 1px solid #000;   /* Border around card */
-  height: 400px;
-  width: 250px;             /* Same width as dropdowns */
-  margin-bottom: 10px;      /* Bottom space between albums */
-  margin-right: 5px;        /* Right space between albums */
-  margin-left: 5px;         /* Left space between albums */
-  position: relative;
+  height: 400px;                    /* Limit height to fit contents */
+  width: 250px;                     /* Same width as dropdowns */
+  border: 1px solid black;          /* Border around card */
+  margin-bottom: 10px;              /* Bottom space between albums */
+  margin-right: 5px;                /* Right space between albums */
+  margin-left: 5px;                 /* Left space between albums */
+  perspective: 1000px;              /* 3D flip effect */
+  position: relative;               /* Keeps front and back of card "on top" of each other so that the flip animation works */
+  padding: 10px;                    /* Pad the outside of the card so nothing sticks to the sides */
 }
 
 /***********************************
  *        ALBUM CARD STYLING
  ***********************************/
-.albumInfo {
-  width: 100%;              /* Make sure info takes up the entire width */
-  position: absolute;
-  bottom: 0px;              /* Lock to the bottom */
-  text-align: center;       /* Center info */
+.albumCardInner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;     /* Ensure child elements maintain 3D positions relative to one another */
+  transition: transform 0.35s;      /* Flip transition time */
 }
 
-.albumCoverAndTitle img {
-  max-width: 90%;           /* Prevents image from touching sides */
-  max-height: 60%;          /* Prevents image from taking up too much space in card */
-  height: auto;             /* Maintains aspect ratio */
+.albumCardFront {
+  height: 400px;
+  text-align: center;               /* Center everything on front of card */
+}
 
-  /* Center image */
-  align-items: center;
-  justify-content: center;
+.albumInfo * {
+  margin: 0;                        /* Get rid of margin between lines for info, placing the lines closer together */
+}
 
-  /* WTF? */
+.albumInfo {
+  /* Align albumInfo to the bottom of the card */
   position: absolute;
-  display: flex;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  right:0;
 }
 
 .albumCoverAndTitle h3 {
-  line-height: 20px;        /* Reduce spacing between lines of album title */
-  text-align: center;       /* Center album title */
-  position: absolute;
-  width: 90%;               /* Prevent from touching sides */
-
-  /* WTF? */
-  top: 56%;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 5px;                  /* Reduce space between album cover and title */
+  line-height: 20px;                /* Reduce spacing between lines of album title */
 }
 
-.albumInfoRating {
-  margin-top: -20px;        /* Make rating closer to the artist name */
+.albumCardBack {
+  transform: rotateY(180deg);       /* Initially hide back of album */
+  overflow-y: scroll;               /* Allow scrolling for overflowing contents */
+  -ms-overflow-style: none;         /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;            /* Hide scrollbar for Firefox */
 }
 
-/***********************************
- *       ARTIST CARD STYLING
- ***********************************/
-.artistCard:hover {
-  cursor: pointer;          /* Highlight that the artist card is clickable */
-}
-
-.artistInfo {
-  text-align: center;       /* Center artist text */
-}
-.artistLink {
-  text-decoration: none;    /* Remove ugly <a> blue highlight/underline */
-  color: black;
-}
-
-.artistLink:hover {
-  color: grey;              /* Grey highlight on hover */
-}
-
-.artistImage {
-  max-width: 85%;           /* Limit size of image so it doesn't butt up against sides */
-  height: auto;             /* Maintain aspect ratio */
-  border-radius: 100px;     /* Make image a circle */
-
-  /* Center image horizontally */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  bottom: 20px;             /* Space up from the bottom */
-
-  /* WTF? */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.albumCardBack::-webkit-scrollbar {
+  display: none;                    /* Hide scrollbar for Chrome/Safari/Opera */
 }
 
 /***********************************
- *       ALBUM TRACK LISTING
+ *    ALBUM CARD TRACK LISTING
  ***********************************/
 .trackNameAndRating {
-  display: grid;                  /* Display tracks in a grid format */
-  grid-template-columns: 20% 80%; /* 20% for rating, 80% for title */
-  list-style: none;               /* Remove bullet points */
-  font-size: 12px;                /* Smaller text than default */
+  display: grid;                    /* Display tracks in a grid format */
+  grid-template-columns: 20% 80%;   /* 20% for rating, 80% for title */
+  list-style: none;                 /* Remove bullet points */
+  font-size: 12px;                  /* Smaller text than default */
 }
 
 .trackList li:not(:last-child) {
-  border-bottom: 1px solid black; /* Separate tracks by line */
+  border-bottom: 1px solid black;   /* Separate tracks by line */
+
   /* Vertically space out tracks in grid */
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
 
 .trackRating {
-  text-align: center;             /* Center - looks better since there are single and double-digit nums */
-  width: 30px;
-  padding-right: 10px;            /* Space out */
-  border-right: 1px solid black;  /* Separate rating from track with a line */
+  text-align: center;               /* Center - looks better since there are single and double-digit nums */
+  width: 30px;                      /* Enough room for a 1 or 2-digit rating */
+  padding-right: 10px;              /* Space out */
+  border-right: 1px solid black;    /* Separate rating from track with a line */
 }
 
 .trackList {
-  padding: 0;                     /* Remove implicit padding */
-  margin-top: 5px;                /* Prevent tracks from touching top of container */
-  margin-bottom: 5px;             /* Prevent tracks from touching bottom of container */
-  overflow-wrap: break-word;      /* Wrapping for track names */
+  padding: 0;                       /* Remove implicit padding */
+  margin-top: 5px;                  /* Prevent tracks from touching top of container */
+  margin-bottom: 5px;               /* Prevent tracks from touching bottom of container */
+  overflow-wrap: break-word;        /* Wrapping for track names */
 }
 
 /***********************************
- *        CARD FLIPPING
+ *      ALBUM CARD FLIPPING
  ***********************************/
-.albumCardInner {
+.albumCardFront,
+.albumCardBack {
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.35s;  /* Flip transition time */
+  position: absolute;               /* Keeps front and back of card "on top" of each other so that the flip animation works */
+  backface-visibility: hidden;      /* Initially hide back of card */
 }
 
 @media (max-width: 800px) {
   .albumCard.flip .albumCardInner {
-    transform: rotateY(180deg); /* Support for flipping cards on mobile by adding 'flip' class to card */
+    transform: rotateY(180deg);     /* Support for click-baesd card flipping on mobile */
   }
 }
 
 @media (min-width: 800px) {
   .albumCard:hover .albumCardInner {
-    transform: rotateY(180deg); /* Support for flipping cards on desktop by flipping on hover */
+    transform: rotateY(180deg);     /* Support for hover-based card flipping on desktop */
   }
 }
 
-.albumCardFront,
-.albumCardBack {
-  width: 100%;
-  height: 100%;
-  position: absolute;           /* If this isn't set, back of the card disappears */
-  backface-visibility: hidden;  /* Initially hide back of card */
+/***********************************
+ *       ARTIST CARD STYLING
+ ***********************************/
+.artistCard:hover {
+  cursor: pointer;                /* Highlight that the artist card is clickable */
 }
 
-.albumCardBack {
-  padding: 5%;                  /* Visually appealing space */
-  transform: rotateY(180deg);   /* Initially hide back of album */
-  overflow-y: scroll;           /* Allow scrolling for overflowing contents */
-  -ms-overflow-style: none;     /* Hide scrollbar for IE and Edge */
-  scrollbar-width: none;        /* Hide scrollbar for Firefox */
+.artistLink {
+  text-decoration: none;          /* Remove ugly <a> blue highlight/underline */
+  color: black;                   /* Black link instead of blue */
+
+  /* Center content on card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Hide scrollbar for Chrome/Safari/Opera */
-.albumCardBack::-webkit-scrollbar {
-  display: none;
+.artistLink:hover {
+  color: grey;                    /* Grey highlight on hover */
+}
+
+.artistInfo {
+  text-align: center;             /* Center artist text */
+}
+
+.artistImage {
+  max-width: 90%;                 /* Limit size of image so it doesn't butt up against sides */
+  height: auto;                   /* Maintain aspect ratio */
+  border-radius: 100px;           /* Make image a circle */
+
+  /* Link artist image to the bottom */
+  position: absolute;
+  bottom: 20px;
 }

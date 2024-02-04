@@ -1,7 +1,7 @@
 ---
-title: 'How to Start an Engine - FACS'
+title: 'How to Start An Engine'
 date: 2023-10-16T18:01:51-07:00
-description: 'A short guide on how to get a vehicle running using FACS - fuel, air, compression, spark.'
+description: 'A short guide on how to get an engine running by checking FACS - fuel, air, compression, spark.'
 tags: ['motorcycle', 'mechanical']
 showPageTitle: true
 ---
