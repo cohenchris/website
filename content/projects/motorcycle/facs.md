@@ -6,7 +6,7 @@ tags: ['motorcycle', 'mechanical']
 showPageTitle: true
 ---
 
-## FACS
+# FACS
 At the most basic level, an engine needs 4 things to run.
 - Fuel
 - Air
@@ -15,7 +15,7 @@ At the most basic level, an engine needs 4 things to run.
 
 In this post, I will explain what these mean, how to check/fix each component, and what I personally did to get my vintage motorcycle running.
 
-### Fuel
+## Fuel
 
 This is the touchiest of the 4. In order for your engine to run cleanly, efficiently, and reliably, the fuel system *must* be sealed and spotless. If you have fuel injectors, make sure that the spray pattern is correct, the ECU is stock, and each injector is spraying. Personally, I have no experience with fuel injection, so you will have to Google.
 
@@ -25,13 +25,13 @@ Once your carburetors are clean and stock, we can check the rest of the fuel sys
 
 Finally, your should ensure that the fuel hoses are fresh and undamaged. Auto part stores have bulk fuel hose in stock for cheap. These hoses should be clamped at either end. Fuel systems (no fuel pump) heavily rely on the presence of a vacuum. Without this vacuum, fuel will not properly flow, and you will starve your engine of fuel.
 
-### Air
+## Air
 
 Air is the easiest part of this entire process. First, check that your air box is undamaged, and your air filter is clean. That's the easy part.
 
 In the previous section, I mentioned that fuel systems rely on a vacuum to function. Over time, rubber degrades, and will eventually cause vacuum leaks. These can be tough to diagnose and fix, so I always err on the cautious side, and replace if in doubt.
 
-### Compression
+## Compression
 
 In my opinion, compression is the most nerve-wracking of these 4 points. Bad cylinder compression can indicate internal engine damage, which can lead to a rough time for your bank account. Most engines need at least 80 psi of compression to run at all. To test this, you have 2 options.
 
@@ -46,7 +46,7 @@ If you want a more precise measurement, most auto parts stores have compression 
 TODO
 
 
-### Spark
+## Spark
 
 Spark can go a few ways. Either you have spark, or you don't.
 
@@ -56,6 +56,6 @@ To perform a simple spark test, stop the flow of fuel and disconnect one spark p
 
 TODO
 
-### Conclusion
+## Conclusion
 
 If you've passed all of these tests, you can be quite confident that your vehicle will run. If not, it could be due to other underlying issues, like timing. Consult your shop manual to diagnose further.

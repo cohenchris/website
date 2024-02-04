@@ -10,7 +10,7 @@
 
 /* These widths need to be so exact to ensure that the cursor starts at the very beginning of the line. If this is not done, the cursor will start at the center. */
 .jobTitleDiv {
-  width: 779px;
+  width: 782px;
 }
 
 .alumnusDiv {
@@ -25,12 +25,12 @@
 @media (min-width: 800px) {
   .jobTitleText, .alumnusText {
     border-right: 3px solid transparent;    /* Cursor */
-    padding-left: 5px;                      /* Even out spacing from cursor being on the right. Don't ask me why it's 5px instead of 3px - that was what prevented the shifting after typing animation finishes. */
     white-space: nowrap;                    /* Keep all text in one line */
     width: 0;                               /* Hide text at the beginning. Typing animation will reveal it. */
     overflow: scroll;                       /* Overflowing text will be hidden, but scrollable */
     -ms-overflow-style: none;               /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;                  /* Hide scrollbar for Firefox */
+    padding-left: 6px;                      /* Even out spacing from cursor being on the right. */
   }
 
   /* Hide scrollbar for Chrome/Safari/Opera */
@@ -51,8 +51,8 @@
    */
   .alumnusText {
     animation:
-      blinking-cursor .5s step-end 6 3.5s,
-      typing 1s steps(40,end) forwards 4.5s;
+      blinking-cursor .5s step-end 6 4s,
+      typing 1s steps(40,end) forwards 5s;
   }
 }
 

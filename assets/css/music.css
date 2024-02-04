@@ -10,8 +10,8 @@
 /***********************************
  *           DROPDOWNS
  ***********************************/
-/* Center dropdowns */
 .dropdownContainer {
+  /* Center dropdowns */
   display: flex;
   justify-content: center;
 }

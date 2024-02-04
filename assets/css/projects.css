@@ -1,59 +1,38 @@
-/* Center "Posts" */
+/***********************************
+ *            HEADER
+ ***********************************/
 .projectsHeader {
+  font-size: 20px;
+  /* Center "Posts" */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/***********************************
+ *           RSS ICON
+ ***********************************/
 .rssIcon {
+  width: 50px;
+  height: 50px;
   margin-left: 10px;            /* Give some space between "Posts" and RSS Icon */
+  /* Center RSS Icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.rssIcon:hover {
-  filter: grayscale(100%);      /* Turn icon grey on hover */
+.rssIcon path {
+  fill: black;
 }
 
-.posts {
-  border-top: 1px solid black;  /* Separate posts and tag cloud */
-
-  /* Limit width of posts by a bit, more visually appealing */
-  padding-right: 35px;
-  padding-left: 35px;
+.rssIcon:hover path {
+  fill: grey;
 }
 
-.article {
-  list-style-type: none;          /* No bullet points */
-  border-bottom: 1px solid black; /* Divide each article from the next */
-}
-
-.articleHeader h3 {
-  font-size: 20px;                /* Increase font size for article title */
-  margin-bottom: 0px;             /* Put title right next to date */
-}
-
-.articleHeaderLink {
-  text-decoration: none;          /* No ugly <a> blue highlight/underline */
-  color: black;
-}
-
-.articleHeaderLink:hover{
-  color: grey;                    /* Make title grey on hover */
-}
-
-.articleHeader p {
-  margin-top: 0px;                /* Put date right next to title */
-}
-
-/* Spacing between preview image and article description */
-.articlePreview {
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.articleSummary {
-  margin-bottom: 30px;            /* Space between description and metadata */
-}
-
+/***********************************
+ *          SEARCH BAR
+ ***********************************/
 .projectsSearchBarContainer {
   margin-bottom: 30px;            /* Give space to the tag cloud */
 
@@ -71,7 +50,9 @@
 
 .searchBar {
   width: 400px;
+  padding-left: 5px;              /* Gives space between search bar outline and search text */
   border: none;                   /* Get rid of default border. We want to border both the search bar AND 'X' button. */
+  outline: none;                  /* Get rid of outline when search bar is active */
 }
 
 .clearSearchBar {
@@ -82,6 +63,9 @@
   border: none;                   /* We don't want a border, that will be taken care of by .projectsSearchBar */
 }
 
+/***********************************
+ *              TAGS
+ ***********************************/
 .tagCloud {
   display: grid;                  /* Display the tags in a grid */
   place-items: center;            /* Center items for visual appeal */
@@ -110,3 +94,51 @@
   border-right: 1px solid black;  /* Add border seperator between items */
   padding-right: 10px;            /* Space out tags */
 }
+
+/***********************************
+ *          POSTS LIST
+ ***********************************/
+.posts {
+  border-top: 1px solid black;  /* Separate posts and tag cloud */
+
+  /* Limit width of posts by a bit, more visually appealing */
+  padding-right: 35px;
+  padding-left: 35px;
+}
+
+/***********************************
+ *           ARTICLE
+ ***********************************/
+.article {
+  list-style-type: none;          /* No bullet points */
+  border-bottom: 1px solid black; /* Divide each article from the next */
+}
+
+.articleHeader h3 {
+  font-size: 20px;                /* Increase font size for article title */
+  margin-bottom: 0px;             /* Put title right next to date */
+}
+
+.articleHeaderLink {
+  text-decoration: none;          /* No ugly <a> blue highlight/underline */
+  color: black;
+}
+
+.articleHeaderLink:hover{
+  color: grey;                    /* Make title grey on hover */
+}
+
+.articleHeader p {
+  margin-top: 0px;                /* Put date right next to title */
+}
+
+.articlePreview {
+  /* Spacing between preview image and article description */
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.articleSummary {
+  margin-bottom: 30px;            /* Space between description and metadata */
+}
+

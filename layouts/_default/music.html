@@ -26,20 +26,20 @@
        </select>
 
       <!-- Sort Method -->
-       <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
-        <option>A-Z</option>
-        <option>Z-A</option>
-        <option>Random</option>
-        <option selected {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
-        <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
-       </select>
+     <select id="sortMethodsDropdown" value={{ $howToSortItems }}>
+      <option>A-Z</option>
+      <option>Z-A</option>
+      <option>Random</option>
+      <option selected {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (High -> Low)</option>
+      <option {{ if eq $whichItemsToDisplay "Artists" }}disabled{{ end }}>Rating (Low -> High)</option>
+     </select>
 
       <!-- Back Button -->
-      <button class="musicBackButton" style="opacity: 0">
-          <a href="/music/artists/" id="backButtonLink">
-            &lt;- Back to Artists View
-          </a>
-        </button>
+      <button id="musicBackButton" style="opacity: 0">
+        <a href="/music/artists/">
+          &lt;- Back to Artists View
+        </a>
+      </button>
     </div>
   </div>
 
