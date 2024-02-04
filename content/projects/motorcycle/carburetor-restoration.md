@@ -4,6 +4,7 @@ date: 2023-10-16T17:26:28-07:00
 description: 'A post about first restoration of the carburetors on my 1976 Kawasaki KZ400-S2'
 tags: ['motorcycle', 'mechanical', 'carburetors']
 showPageTitle: true
+preview: '/images/motorcycle/carburetor-restoration/carburetor-assembly.webp'
 ---
 
 ## Intro

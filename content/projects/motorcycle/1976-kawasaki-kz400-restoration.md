@@ -4,6 +4,7 @@ date: 2022-10-16
 description: 'A post about my 1976 Kawasaki KZ400-S2, which I began restoring in August 2022.'
 tags: ['motorcycle', 'mechanical']
 showPageTitle: true
+preview: '/images/motorcycle/delivery-day.webp'
 ---
 
 In August 2022, I bought a motorcycle.
