@@ -13,9 +13,12 @@
  *           RSS ICON
  ***********************************/
 .rssIcon {
+  margin: 5px;            /* Give some space between "Posts" and RSS Icon */
+
+  /* Sizing */
   width: 50px;
   height: 50px;
-  margin-left: 10px;            /* Give some space between "Posts" and RSS Icon */
+
   /* Center RSS Icon */
   display: flex;
   justify-content: center;
