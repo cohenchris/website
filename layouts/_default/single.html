@@ -8,31 +8,16 @@
 {{ end }}
 {{ define "main" }}
 
-  <div class="articleContainer">
+  <div>
 
-    <!-- Back Button -->
-    {{ if ne .Params.title "About" }}
-      <div class="projectsBackButtonContainer">
-        <button class="projectsBackButton">
-          <a href="/projects/">
-            &lt;- Back to Posts
-          </a>
-        </button>
-      </div>
+    {{ if .Params.showPageTitle }}
+      <h1 class="articleTitle">
+        {{ .Title }}
+      </h1>
     {{ end }}
 
     <div class="articleBody">
-
-      {{ if .Params.showPageTitle }}
-        <h1 class="articleTitle">
-          {{ .Title }}
-        </h1>
-      {{ end }}
-
-      <div>
-        {{ .Content }}
-      </div>
-
+      {{ .Content }}
     </div>
 
   </div>
