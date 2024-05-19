@@ -1,7 +1,5 @@
-#!/bin/python3.11
+#!/bin/python3
 
-from __future__ import division             # allows division to be float by default
-from plexapi.myplex import MyPlexAccount
 from plexapi.server import PlexServer
 from typing import List
 import json
@@ -30,7 +28,6 @@ PLEX_TOKEN = os.getenv('PLEX_TOKEN')
 MUSIC_DATA_OUTPUT_DIR = os.getenv("MUSIC_DATA_OUTPUT_DIR")
 ARTISTS_ALBUMS_OUTPUT_DIR = os.getenv("ARTISTS_ALBUMS_OUTPUT_DIR")
 
-account = MyPlexAccount(PLEX_TOKEN)
 session = requests.Session()
 session.verify = False
 requests.packages.urllib3.disable_warnings()
