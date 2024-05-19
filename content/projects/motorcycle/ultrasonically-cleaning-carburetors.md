@@ -34,8 +34,7 @@ It's incredibly important to stay organized. Without proper organization, you ma
 
 I like to take a piece of cardboard and divide it up with a sharpie. I'll poke the small parts into the cardboard, lay larger piece on top, and label each piece with the part number from the diagram above.
 
-![Parts Organization #1](/images/motorcycle/ultrasonically-cleaning-carburetors/parts-organization-1.webp)
-![Parts Organization #2](/images/motorcycle/ultrasonically-cleaning-carburetors/parts-organization-2.webp)
+![Parts Organization](/images/motorcycle/ultrasonically-cleaning-carburetors/parts-organization.webp)
 
 
 ## Using the Ultrasonic Cleaner
