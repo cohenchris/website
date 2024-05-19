@@ -2,7 +2,7 @@
 title: 'Cleaning and Polishing'
 date: 2024-05-19T09:53:56-07:00
 description: ''
-tags: []
+tags: ['motorcycle', 'polishing']
 showPageTitle: true
 preview: '/images/motorcycle/cleaning-and-polishing/rear-hub-after.webp'
 ---
