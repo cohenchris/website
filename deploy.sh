@@ -6,6 +6,9 @@ cd "$(dirname "$0")"
 # Font subset
 ./get-all-chars.py space.ttf
 
+# Use my wgetrc, which moves .wget-hsts from ~/ to ~/.cache
+export WGETRC=/home/phrog/.config/wget/wgetrc
+
 # Get Resume PNG, convert to webp, and resize
 wget https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png
 cwebp ChrisCohen_resume.png -o static/images/ChrisCohen_resume.webp -q 80
