@@ -139,7 +139,7 @@ def convert_to_webp(source, max_size):
     image.save(source)
 
     # Convert JPG to webp
-    image.save(destination, format="webp", quality=25)
+    image.save(destination, format="webp", quality=50)
 
     os.remove(source);
 
@@ -164,7 +164,7 @@ def scan_library() -> List[Artist]:
             tracklist: List[Track] = []
 
             # Determine eligible albums
-            if (len(album.tracks()) <= 4):
+            if (len(album.tracks()) < 4):
                 # If album only has 4 or fewer songs, we count it as an EP. Omit from JSON.
                 artist_log_str += YELLOW + f"\t{album.title} (<4 songs)\n" + RESET
                 omitAlbum = True
