@@ -54,7 +54,7 @@ For most popular bikes (Honda CB-series especially), there is some guy out there
 
 These alternative tensioners are completely manual - essentially, it's just a single screw.
 Need more tension? Tighten the screw.
-Need less tension? Losen the screw.
+Need less tension? Loosen the screw.
 It doesn't get much simpler than that.
 
 There is some room for error, of course... if it's not tightened enough, it may jump timing.
