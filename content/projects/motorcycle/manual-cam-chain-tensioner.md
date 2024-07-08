@@ -7,7 +7,7 @@ showPageTitle: true
 preview: '/images/motorcycle/manual-cam-chain-tensioner/new-tensioner.webp'
 ---
 
-## Background
+# Background
 For the most part, Japanese motorcycles from the 70s are notoriously bulletproof.
 My bike has over 23,000 miles on the clock, which is high for most bikes.
 These bikes, however, can easily go to 100k with proper care.
@@ -45,7 +45,7 @@ When you close the throttle, the chain will be moving slower, but the spring may
 It is possible that a dangerous amount of slack will be left in the chain, so it could jump a tooth.
 In the worst-case-scenario, your bike's engine is now scrap metal.
 
-## The Simple Solution
+# The Simple Solution
 There's a pretty established discussion and aftermarket community for old bikes like these.
 Reddit and [KZRider](kzrider.com) are my two favorites.
 
@@ -91,7 +91,7 @@ Judging off of his website, he clearly knows what he's doing.
 He has links and photos for numerous models that have been successfully installed.
 Really, though, I had no other option, so I decided to give it a shot.
 
-### Installation
+## Installation
 After a week or two of waiting, the tensioner arrived.
 It came with the plate which will attach to the body of the bike, and two different lengths of tensioning screw.
 Since he had never had one of these installed, he wasn't positive if the typical shorter screw would be long enough.
