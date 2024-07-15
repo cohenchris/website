@@ -47,7 +47,7 @@ In the worst-case-scenario, your bike's engine is now scrap metal.
 
 # The Simple Solution
 There's a pretty established discussion and aftermarket community for old bikes like these.
-Reddit and [KZRider](kzrider.com) are my two favorites.
+Reddit and [KZRider](https://kzrider.com) are my two favorites.
 
 This semi-automatic tensioner is a very common issue with bikes around this time period (not necessarily Kawasaki!).
 For most popular bikes (Honda CB-series especially), there is some guy out there on the internet who mills and sells alternative tensioners for this exact use case.
@@ -71,7 +71,7 @@ Nobody on Reddit was selling any.
 I couldn't even find any mention of anybody doing this on old bike forums (for my exact model).
 
 After a tiring search, I found exactly one lead.
-An old, early-2000s-looking, [HTTP-only website](http://clems-garage.com) for some guy named Clem based out of Ohio, last updated in 2012.
+An old, early-2000s-looking, [HTTP-only website](http://clems-garage.com/CCT) for some guy named Clem based out of Ohio, last updated in 2012.
 The home page says,
 > This product was developed out of my need to replace broken/failing cam chain tensioners on my own bikes.  It became apparent very quickly that I wasn't alone.  Many other riders could benefit from these and I developed a cost effective method of manufacture to make them at a good price for others to keep their motorcycles properly running. 
 
