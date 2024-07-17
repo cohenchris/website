@@ -111,9 +111,9 @@ To make things easy from here on out (plus, I use the 10.0.0.0/8 subnet instead 
 
 All you need is the MAC address. The easiest way to find this is to look at the sticker on the back of the unit.
 
-![Switch Static IP](/images/managed-network-switch/switch-static-ip-opnsense.webp)
-
 After this change (and corresponding firewall changes, which is out of scope for this article), I was able to access the switch's web interface.
+
+![Switch Static IP](/images/managed-network-switch/static-ip.webp)
 
 ### Firmware Upgrade
 To upgrade the firmware, I first went to [Cisco's Support Page](https://www.cisco.com/c/en/us/support/index.html).

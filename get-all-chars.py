@@ -25,10 +25,16 @@ def is_binary(file_path):
 
 # Iterate through the directory names and file contents
 for root, dirs, files in os.walk("."):
+
+    # Add directory names to charset
     for dir_name in dirs:
         char_set.update(dir_name)
+
+    # Add filenames to charset
     for file_name in files:
         file_path = os.path.join(root, file_name)
+
+        # If the file is not binary data, add file contents to charset
         if not is_binary(file_path):
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:

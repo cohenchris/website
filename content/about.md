@@ -14,9 +14,9 @@ Professionally, I tend to work between software and hardware, primarily using C,
 - Secure video playback
 - ROM-backed remote device attestation
 
-This project was started from scratch, and is currently present in ROM on the Qualcomm Snapdragon SM8650, and slated to be included with many more upcoming mobile, automotive, and IoT Qualcomm chipsets.
+This project was started from scratch, is currently present in ROM on the Qualcomm Snapdragon SM8650, and is slated to be included with many more upcoming mobile, automotive, and IoT Qualcomm chipsets.
 
-Outside of work, I like to surf and play the cello. I also typically juggle some random project as a pastime - right now, I'm restoring a 1976 Kawasaki KZ400-S2. It was an impulse buy, and I knew absolutely nothing at the beginning, so YouTube has been my savior.
+Outside of work, I like to surf and play the cello. I also typically juggle some random project as a pastime - right now, I'm restoring a 1976 Kawasaki KZ400-S2. It was an impulse buy, and I knew absolutely nothing at the beginning, so YouTube has been my savior. Check out my Project page for updates!
 
 As for tech-related projects, I run a home network which hosts privacy-focused, open-source applications to replace reliance on big tech companies. This started as a COVID hobby, but has evolved into a full 9u server rack and complex network configuration.
 
