@@ -102,7 +102,6 @@
  *          POSTS LIST
  ***********************************/
 .posts {
-  border-top: 1px solid black;  /* Separate posts and tag cloud */
 
   /* Limit width of posts by a bit, more visually appealing */
   padding-right: 35px;
@@ -114,7 +113,7 @@
  ***********************************/
 .article {
   list-style-type: none;          /* No bullet points */
-  border-bottom: 1px solid black; /* Divide each article from the next */
+  border-top: 1px solid black; /* Divide each article from the next */
 }
 
 .articleHeader h3 {

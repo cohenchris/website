@@ -82,7 +82,6 @@ button:hover, button a:hover {
   /* Swap navbar from horizontal to vertical orientation + add separation border */
   .navbar {
     flex-direction: column;
-    border-bottom: 1px solid black;
   }
 
   /* Center brand at the top */

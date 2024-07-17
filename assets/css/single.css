@@ -2,7 +2,6 @@
   text-align: center;             /* Center title */
   font-size: 35px;                /* Increase size of title */
   font-weight: normal;            /* Headers are bolded by default, don't want that */
-  border-bottom: 1px solid black; /* Dividing border between title and article */
   padding-bottom: 20px;           /* Dividing padding to give the title space to breathe */
 }
 
