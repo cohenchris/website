@@ -177,10 +177,10 @@ If somebody plugs into one of the other ports, they have access to absolutely no
 A checklist:
 
 - Port 1 - every VLAN
-- Port 13 - Backups VLAN, tag 50
-- Port 14 - IoT VLAN, tag 20
-- Port 15 - Management/Trusted/IoT/Guest VLANs, tags 1/20/30/40
-- Port 24 - DMZ VLAN, tag 10
+- Port 13 - Backups VLAN
+- Port 14 - IoT VLAN
+- Port 15 - Management/Trusted/IoT/Guest VLANs
+- Port 24 - DMZ VLAN
 
 ### Create VLAN Definitions Matching Router
 The actual creation of these VLANs happens on your router.
@@ -206,14 +206,17 @@ Once each VLAN has been added, you may finally assign a VLAN to each port.
 On this switch, you can configure each port to be a trunk or an access switch.
 These names may change depending on manufacturer, but the core concept is the same.
 
-An access port is intended to be used with a device connected which does not have any concept of VLANs.
-Think individual computers - these ports are designed to connect to end devices.
+An **access port** is intended to be used with a device which *does not* have any concept of VLANs.
+The connected device is called an "end device".
+End devices are at the peripheral of the network, serving as the final destination for data - a personal laptop, for example.
 Each access port carries traffic for a single VLAN, ensuring that the traffic to this port is tagged with the correct VLAN ID.
 
-In contrast, a trunk port  is intended to be used with a device connected which does have a concept of VLANs.
-Think about other network devices like another switch, a wireless access point, etc.
-Each trunk port carries traffic for multiple VLANs simultaneously, tagging each frame as it goes.
-This allows multiple VLANs to be extended across different network segments.
+In contrast, a **trunk port**  is intended to be used with a device which *does* have a concept of VLANs.
+The connected device is called an "intermediary device", which facilitates communication between end devices.
+End users do not typically interact with intermediary devices - routers, switches, and wireless access points are all examples.
+Each trunk port carries traffic for multiple VLANs simultaneously, allowing multiple VLANs to be extended across different network segments.
+
+#### Planning the Configuration
 
 In my case, port 24 is the easiest example.
 This port is connected to my main lab machine, and needs to go on the DMZ VLAN (tag 10).
