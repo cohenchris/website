@@ -2,7 +2,7 @@
 title: 'Shell Interpreter in C'
 date: 2019-10-01
 description: 'A shell interpreter written in C to combine behavior from common shells.'
-tags: ['personal', 'linux', 'school', 'c']
+tags: ['linux', 'school', 'c']
 showPageTitle: true
 ---
 

@@ -2,7 +2,7 @@
 title: 'Data Privacy - A Close Call'
 date: 2023-10-14T10:42:04-07:00
 description: 'A post about the importance of data privacy, and my near miss.'
-tags: ['data', 'privacy', 'homelab', 'networking']
+tags: ['privacy', 'homelab', 'networking']
 showPageTitle: true
 ---
 

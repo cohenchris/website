@@ -2,7 +2,7 @@
 title: 'Natural Language Processing Database Parsing in Python'
 date: 2019-08-01
 description: 'I used NLP (Natural Language Processing) to parse navy database, providing an invaluable tool which prevents a human from having to manually read and diagnose'
-tags: ['nlp', 'internship', 'python']
+tags: ['internship', 'python']
 showPageTitle: true
 ---
 

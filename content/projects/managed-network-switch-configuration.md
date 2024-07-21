@@ -2,7 +2,7 @@
 title: 'Managed Network Switch Configuration'
 date: 2024-07-10T18:14:11-07:00
 description: ''
-tags: ['switch', 'networking']
+tags: ['homelab', 'networking']
 showPageTitle: true
 preview: '/images/managed-network-switch/switch-diagram.webp'
 ---

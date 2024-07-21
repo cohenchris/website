@@ -2,7 +2,7 @@
 title: 'Twistter (Twitter + Reddit Crossover) using ReactJS'
 date: 2019-12-01
 description: 'A Twitter/Reddit hybrid, where I worked on the front-end using ReactJS.'
-tags: ['web dev', 'school']
+tags: ['web', 'school']
 showPageTitle: true
 ---
 

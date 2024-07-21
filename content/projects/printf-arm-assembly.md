@@ -2,7 +2,7 @@
 title: 'printf() Replacement in ARM Assembly'
 date: 2019-04-01
 description: 'A functional replacement for printf(), written in ARM Assembly on a Raspberry Pi 3B+'
-tags: ['personal', 'linux', 'school', 'raspberry pi']
+tags: ['linux', 'school', 'raspberry pi']
 showPageTitle: true
 ---
 

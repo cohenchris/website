@@ -2,7 +2,7 @@
 title: 'Sudoku Solver in C++'
 date: 2020-01-01
 description: 'A sudoku solver with 4 specialized solving algorithms, finishing using recursive brute-force when needed'
-tags: ['personal', 'algorithms', 'c++']
+tags: ['algorithm', 'c++']
 showPageTitle: true
 ---
 

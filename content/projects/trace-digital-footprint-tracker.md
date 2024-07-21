@@ -2,7 +2,7 @@
 title: 'TRACE - a digital footprint tracker'
 date: 2021-05-01
 description: 'My senior project - a privacy-conscious service to track and manage your digital footprint'
-tags: ['web dev', 'security', 'school']
+tags: ['web', 'security', 'school']
 showPageTitle: true
 ---
 
