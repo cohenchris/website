@@ -2,7 +2,7 @@
 title: 'A Small Crash Course for ZFS'
 date: 2024-06-12T11:45:00-07:00
 description: ''
-tags: ['ZFS', 'linux', 'filesystem', 'SSD']
+tags: ['zfs', 'linux', 'filesystem']
 showPageTitle: true
 preview: ''
 ---
