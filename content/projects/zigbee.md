@@ -91,6 +91,9 @@ After nearly a year with them, I have experienced zero issues with device compat
 IKEA also makes a wide array of reasonably priced, good-looking Zigbee devices.
 Even better, from what I've read online, these devices tend to integrate seamlessly with nearly every other manufacturer's hardware.
 
+PLEASE NOTE - I use HomeAssistant to control everything, and will mention it throughout these next few sections.
+If you're curious, the final section in this article will cover HomeAssistant setup.
+
 ## Hub
 Your very first Zigbee purchase should be a hub.
 This hub is a central point of communication for all devices, and you will use this to control everything.
@@ -111,15 +114,16 @@ Therefore, I tend to recommend that, where possible, each Zigbee device should a
 Most of the time, this information can be found in the product description.
 
 ## Smartifying
-### Lights
-When smartifying lights, you have a few options:
+### Core Components
+If you want to make a dumb device smart, you have a few options:
 
 #### Plugs
 
-For any free-standing lamps, a smart plug is the easiest solution.
-These plugs "toggle" by allowing or disallowing the flow of electricity to the connected device.
+If it works for your scenario, a smart plug is the easiest solution.
+These plugs "toggle" by allowing or blocking the flow of electricity to the connected device.
 
 I use smart plugs for lamps and fans.
+Easy setup, no maintenance, and it's a breeze to swap out devices with no change to my HomeAssistant setup.
 
 ![Plugs](/images/zigbee/plugs.webp)
 
@@ -127,36 +131,108 @@ I use smart plugs for lamps and fans.
 
 #### Switches
 Existing light fixtures can be tricky.
-My preferred solution is to buy something like Sonoff's [ZBLMINI-2]()
+I've been very satisfied with Sonoff's [ZBMINI-L2](https://sonoff.tech/product/diy-smart-switches/zbmini-l2/)
 
-SBMThese switches connect in series to your wall switches.
+These switches work by connecting in series to your existing wall light switches.
+Your light switch will work the same as it did before, but the Sonoff device will use wall power to advertise itself for a Zigbee interview.
+At this point, you can pick up the device with your Zigbee hub, and control the light switch remotely.
+My favorite part - since the ZBMINI-L2 is small enough to fit inside of your wall switch, this solution is completely invisible.
 
-The main benefit here
+If you aren't familiar with electrical work, this can be daunting, but with proper equipment, it's a 5-minute installation.
+Before opening anything up, TURN OFF YOUR BREAKER.
+Mains voltage is not something that you want to mess with.
+If you're extra cautious, take a multimeter and measure across the positive and negative terminals of your light switch.
 
+Once the power is off, splice and strip the positive/negative wires, leaving sufficient slack.
+This switch has 4 ports - positive/negative from the wall, and positive/negative to the light switch.
+Take your stripped wire ends and use the screw-terminals on the ZBMINI-L2 to connect the wires to the right ports (READ THE MANUAL!).
 
+Before closing everything up, I would highly recommend turning on the breaker and testing that everything works as expected.
+Once you've verified this, close everything up and test again (wires may have moved/disconnected), but that's it!
 
-If you aren't familiar with electrical work, this can be daunting.
+I really cannot recommend this switch enough.
+You *could* use bulbs for every light, but each bulb can be as expensive as one of these switches.
+Maybe this isn't an issue for you, but both my room and dining room light fixtures have 3 bulbs.
+Instead of spending $100+ on smart bulbs, I spend $30 on 2 switches.
+Even better, instead of 6 points of failure, I now only have 2, and each switch is less expensive than replacing one failed bulb.
+I also have one set up for my kitchen light, which is a florescent fixture.
+There are exactly zero smart replacements for florescent bulbs, so the existence of this switch saves me a lifetime of pain and suffering from having to manually turn on my kitchen light.
 
 ![Switches](/images/zigbee/switches.webp)
+
 #### Bulbs
-Existing light fixtures can be tricky.
-One solution is to replace each bulb with a Zigbee smart bulb.
+I will preface by saying that, in my opinion, smart bulbs are largely useless.
 
+In nearly every scenario, an internal smart wall switch or a smart plug can accomplish exactly what you need.
+Bulbs can be expensive, and have a limited lifespan!
+Smart wall switches and plugs are cheap and reliable.
 
+That being said, smart bulbs *do* have their time and place.
+I have one smart bulb in my entire house - my porch light.
 
+This is for 2 reasons:
+1. Somehow, none of my breakers are connected to the front door light switch, so if I did install a smart switch, I would have to work with live wires (NO!!!)
+2. Regardless of #1, I'm lazy and don't want to install a smart switch for one bulb
 
-### Misc Components
+I chose an [IKEA brand bulb]() because of how well they pair with hubs from nearly every manufacturer.
+As much as I hate smart bulbs, this solution works quite well.
+Seamlessly paired to my hub, and has never given me trouble.
 
+### The Extras
+
+I'll go out on a limb and say that plugs/switches/bulbs helped smartify every one of your dumb devices - it did for me.
+
+Now, you can have a little bit of fun and buy devices which come with smart functionality built-in. At this point, I started creating problems to solve... whether this is good or bad, that's up to you :)
+
+Summers in San Diego don't get blisteringly hot, but with no AC, my house is pretty uncomfortable at times.
+Sonoff sells a fantastic [smart magnetic thermometer](), which, when connected to HomeAssistant, exposes Humidity/Temperature sensors.
+This well-polished product helped me figure out that my apartment hovers near 80 degrees and 60-70% humidity during the summer.
+How pleasant.
 
 ![Thermometer](/images/zigbee/thermometer.webp)
 
+I made some HomeAssistant automations which allowed me to turn every light on/off with the app.
+This works well, but poses a few issues
+- I don't want to take out my phone every time I get home
+- If somebody else is at my house, I want them to have the same convenience that I do
+
+A cheap Sonoff [smart button]() solved this.
+After pairing with HomeAssistant, I created an automation to toggle every light when the button was pressed, stuck it on the wall, and called it a day.
+Doesn't get easier than that.
+
 ![Button](/images/zigbee/button.webp)
 
-## Hub Controller Options
-### Home Assistant
+## HomeAssistant Integration
+### Hub
 
-![Visualization](/images/zigbee/visualization.webp)
+#### Installation and Setup
+My Zigbee hub is directly plugged into my HomeAssistant host via USB, so setup was incredibly easy.
+As long as HomeAssistant has access to this USB device (pass it through if you're running Docker), it's as easy as downloading the "Zigbee Home Automation (ZHA)" integration and selecting said USB device.
+
+#### Device Interviewing
+
+To add a new device, first go to the ZHA integration page.
+Click on 'devices', then 'Add Device' in the bottom right corner.
+If a nearby Zigbee device is within range and in pairing mode, it should appear here.
 
 ![Interview](/images/zigbee/interview.webp)
 
-### Others
+Pretty easy!
+One interesting little feature - go to 'Configure' on the ZHA integration page, the navigate to the 'Visualization' tab.
+Here, ZHA will show you a visual representation of your Zigbee network!
+I haven't found a great use for this, but it looks cool.
+Text is a bit small here... each node reports its HomeAssistant alias, device name, device ID, whether or not it's a router, etc.
+
+![Visualization](/images/zigbee/visualization.webp)
+
+#### Automations
+This is out-of-scope for this article, but I figured I'd mention a couple of my favorite automations.
+
+- After the sun has set, if my doorbell detects motion, my front door light will turn on.
+- Bedtime routine - turns off every light except for my room string lights. After 25 minutes, the string lights flash. 5 minutes later, they turn off.
+- When I start watching a movie on my TV, all lights turn off
+- When I pause a movie on my TV, 2 small lights turn on
+- When I finish/stop a movie on my TV, all lights turn on
+- If the temperature in my apartment exceeds 75 degrees, all of my fans turn on
+
+Solutionism at its finest, but I have a lot of fun :)
