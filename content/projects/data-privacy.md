@@ -6,6 +6,8 @@ tags: ['privacy', 'homelab', 'networking']
 showPageTitle: true
 ---
 
+**UPDATE - Just days after posting this on LinkedIn, my Apple ID was re-enabled! I was never contacted again by Apple Support, so it's unclear whether or not my original appeal(s) finally went through, or an Apple employee saw the post. Regardless, my data is safe, and I've taken this as a learning opportunity to further de-couple my reliance on Apple's ecosystem. Stay safe!**
+
 You can view this post on LinkedIn [here](https://linkedin.com/pulse/importance-data-privacy-2023-chris-cohen)
 
 I want to post about an experience I’m currently going through with Apple support, and use it for a chance to talk about data privacy. This is NOT the typical big tech hate post. I work for a big tech company myself, Qualcomm, with whom I have been very happy these last few years.
@@ -26,13 +28,15 @@ This is not a total failure on Apple’s part – I believe I’ve just fallen i
 
 ## How Self-Hosting Saved My Digital Life
 
-In light of this, I’d like to advertise a few services that I use myself (for which I am not sponsored). These services saved me from losing everything. For the average person, the best solution is to use Proton | Privacy by Default's suite of applications. They provide encrypted email, calendars, contacts, file storage, and much more, all for a very reasonable price. This does shift the problem from one provider to another, but Proton does have one notable advantage over others – all of your data is encrypted, and only accessible by you. They do occasionally comply with law enforcement, but only under certain circumstances. When they do, they are transparent and accountable. You can see their yearly report at https://proton.me/legal/transparency. Without hosting your own services, I believe that this is the best alternative.
+In light of this, I’d like to advertise a few services that I use myself (for which I am not sponsored). These services saved me from losing everything. For the average person, the best solution is to use [Proton's](https://proton.me/) suite of applications. They provide encrypted email, calendars, contacts, file storage, and much more, all for a very reasonable price. This does shift the problem from one provider to another, but Proton does have one notable advantage over others – all of your data is encrypted, and only accessible by you. They do occasionally comply with law enforcement, but only under certain circumstances. When they do, they are transparent and accountable. You can read their yearly legal transparency report [here](https://proton.me/legal/transparency). Without hosting your own services, I believe that this is the best alternative.
+
+The goal of a privacy-focused digital life is not to hide illicit activities, but rather keep your data private because it is your right to do so. Edward Snowden's famous quote reflects this - "Arguing that you don't care about the right to privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say." 
 
 I host everything myself. I realize this is not reasonable for most people; however I find that it keeps me sharp, and is a nice technical hobby. By nature, things break, and so I am constantly fixing, upgrading, and polishing. For the crazy privacy-focused, here is what I do:
 
 ### Nextcloud - A Catch-All for Cloud-Based Services
 
-For everything related to online documents, contacts, tasks, calendars, and most “all-in-one” cloud services that most people take for granted, I host an instance of Nextcloud (https://github.com/nextcloud) at my home. Nextcloud is an open-source, privacy-focused cloud service that anybody with a bit of technical inclination can host themselves. For those who don’t want to go through the headache of self-hosting, Nextcloud offers a paid service using their own servers, which I can highly recommend.
+For everything related to online documents, contacts, tasks, calendars, and most “all-in-one” cloud services that most people take for granted, I host an instance of [Nextcloud](https://github.com/nextcloud) at my home. Nextcloud is an open-source, privacy-focused cloud service that anybody with a bit of technical inclination can host themselves. For those who don’t want to go through the headache of self-hosting, Nextcloud offers a paid service using their own servers, which I can highly recommend.
 
 ### The Difficulty of Email
 
@@ -41,12 +45,12 @@ Email is a bit trickier – anybody who has tried to host their own email in the
 
 Setting up a Mail Transfer Agent (postfix), Mail Delivery Agent (dovecot), Spam and Virus Filtering (clamav), User Authentication, etc. in an effective way is a very error-prone process. On top of that, once you have a working email server, you still need correct SPF, DKIM, and DMARC DNS records. These records prevent your envelopes from being modified successfully, and prove to these larger email providers that you are not spam.
 
-That said, it is very rewarding once successfully set up. This is not meant to scare you away from hosting your own email. Instead, it is merely a warning of everything involved. I personally use https://github.com/docker-mailserver/docker-mailserver, which is a stellar project that bundles every email-related program needed into a very convenient Docker image. With some background knowledge and simple configuration, you can set up an entire email server with one command.
+That said, it is very rewarding once successfully set up. This is not meant to scare you away from hosting your own email. Instead, it is merely a warning of everything involved. I personally use [docker-mailserver](https://github.com/docker-mailserver/docker-mailserver), is a stellar project which bundles every email-related program needed into a very convenient Docker image. With some background knowledge and simple configuration, you can set up an entire email server with one command.
 
 #### The Best Cloud Alternative - Proton
-For most people, I realize this is far too complicated for something as simple as email. As mentioned earlier, one very nice alternative is Proton | Privacy by Default's email service, which is focused on privacy, security, and ease-of-use. Their servers are hosted in Switzerland, which is more of a buzzword nowadays, but still provide much better security than other providers. I personally used their service for years, and if email ever becomes too much of a headache, I will gladly return to them.
+For most people, I realize this is far too complicated for something as simple as email. As mentioned earlier, one very nice alternative is Proton's email service, which is focused on privacy, security, and ease-of-use. Their servers are hosted in Switzerland, which is more of a buzzword nowadays, but still provide much better security than other providers. I personally used their service for years, and if email ever becomes too much of a headache, I will gladly return to them.
 
 ### Domain Registrar - Porkbun
-The backbone of everything that I host is Porkbun, my domain registrar. I have owned my domain, chriscohen.dev, since 2019. Since 2021, Porkbun has been my registrar of choice. Their support is very responsive, helpful, and knowledgeable. Domains are offered for a very reasonable price - I pay about $11 per year for mine. I’ve had zero issues with them since I joined, and will be a lifelong client.
+The backbone of everything that I host is [Porkbun](https://porkbun.com/), my domain registrar. I have owned my domain, chriscohen.dev, since 2019. Since 2021, Porkbun has been my registrar of choice. Their support is very responsive, helpful, and knowledgeable. Domains are offered for a very reasonable price - I pay about $11 per year for mine. I’ve had zero issues with them since I joined, and will be a lifelong client.
 
 Thanks for reading, and I hope that this post can bring some awareness to those who are not conscious about where their data lives.
