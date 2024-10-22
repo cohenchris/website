@@ -25,9 +25,10 @@ PLEX_URL = os.getenv('PLEX_URL')
 PLEX_TOKEN = os.getenv('PLEX_TOKEN')
 
 # Place that the website expects data to be
-MUSIC_IMAGES_OUTPUT_DIR = os.getcwd() + "/assets" # images location
-MUSIC_DATA_OUTPUT_DIR = os.getcwd() + "/static" # JSON data location
-ARTISTS_ALBUMS_OUTPUT_DIR = os.getcwd() + "/content/music/artists" # Markdown page location
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+MUSIC_IMAGES_OUTPUT_DIR = SCRIPT_DIR + "/assets" # images location
+MUSIC_DATA_OUTPUT_DIR = SCRIPT_DIR + "/static" # JSON data location
+ARTISTS_ALBUMS_OUTPUT_DIR = SCRIPT_DIR + "/content/music/artists" # Markdown page location
 
 session = requests.Session()
 session.verify = False
