@@ -25,8 +25,9 @@ PLEX_URL = os.getenv('PLEX_URL')
 PLEX_TOKEN = os.getenv('PLEX_TOKEN')
 
 # Place that the website expects data to be
-MUSIC_DATA_OUTPUT_DIR = os.getenv("MUSIC_DATA_OUTPUT_DIR")
-ARTISTS_ALBUMS_OUTPUT_DIR = os.getenv("ARTISTS_ALBUMS_OUTPUT_DIR")
+MUSIC_IMAGES_OUTPUT_DIR = os.getcwd() + "/assets" # images location
+MUSIC_DATA_OUTPUT_DIR = os.getcwd() + "/static" # JSON data location
+ARTISTS_ALBUMS_OUTPUT_DIR = os.getcwd() + "/content/music/artists" # Markdown page location
 
 session = requests.Session()
 session.verify = False
@@ -307,3 +308,7 @@ with open("artists.json", "w") as f:
 with open("albums.json", "w") as f:
     f.write(json.dumps(albums_json, default=lambda o: o.__dict__, indent=4, ensure_ascii=True))
 
+# Clone data into static directory so that images can be served
+# Eventually, I would like to have 2 separate outputs - one tree of JSON data in the assets directory, and one tree of images in the static directory
+# This is the quick-and-dirty fix for now
+shutil.copytree(MUSIC_DATA_OUTPUT_DIR, MUSIC_IMAGES_OUTPUT_DIR)
