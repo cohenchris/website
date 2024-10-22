@@ -46,19 +46,25 @@
   <!-- Cards -->
   <div id="musicCardGrid" class="musicCardGrid">
     {{ if ne $displayedArtistName "" }}
-      {{ $jsonData := getJSON (printf "/static/music_data/%s/albums.json" $displayedArtistName) }}
-      {{ range $jsonData }}
-        {{ partial "albumcard.html" . "Albums" }}
+      {{ with resources.Get (printf "/music_data/%s/albums.json" $displayedArtistName) }}
+        {{ $jsonData := . | transform.Unmarshal }}
+        {{ range $jsonData }}
+          {{ partial "albumcard.html" . "Albums" }}
+        {{ end }}
       {{ end }}
     {{ else if eq $whichItemsToDisplay "Albums" }}
-      {{ $jsonData := getJSON "/static/music_data/albums.json" }}
-      {{ range sort $jsonData "albumRating" "desc" }}
-        {{ partial "albumcard.html" . "Albums" }}
+      {{ with resources.Get "music_data/albums.json" }}
+        {{ $jsonData := . | transform.Unmarshal }}
+        {{ range sort $jsonData "albumRating" "desc" }}
+          {{ partial "albumcard.html" . "Albums" }}
+        {{ end }}
       {{ end }}
     {{ else if eq $whichItemsToDisplay "Artists" }}
-      {{ $jsonData := getJSON "/static/music_data/artists.json" }}
-      {{ range shuffle $jsonData }}
-        {{ partial "artistcard.html" . "Artists" (dict "displayedArtistName" $displayedArtistName) }}
+      {{ with resources.Get "music_data/artists.json" }}
+        {{ $jsonData := . | transform.Unmarshal }}
+        {{ range shuffle $jsonData }}
+          {{ partial "artistcard.html" . "Artists" (dict "displayedArtistName" $displayedArtistName) }}
+        {{ end }}
       {{ end }}
     {{ end }}
 
