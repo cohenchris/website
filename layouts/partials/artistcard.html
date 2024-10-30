@@ -2,7 +2,8 @@
   <a class="artistLink" href="{{ printf "/music/artists/%s/" (.artistName | safeURL) }}">
     <div class="artistInfo">
       <h2>{{ .artistName }}</h2>
-      <p>{{ .artistNumRatedAlbums }} rated albums</p>
+      {{ $albumPluralize := cond (eq (int .artistNumRatedAlbums) 1) "album" "albums" }}
+      <p>{{ .artistNumRatedAlbums }} {{ $albumPluralize }}</p>
     </div>
     <img class="artistImage" src="{{ .artistImage }}" alt="{{ .artistName }} artist image" />
   </a>
