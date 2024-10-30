@@ -309,7 +309,14 @@ with open("artists.json", "w") as f:
 with open("albums.json", "w") as f:
     f.write(json.dumps(albums_json, default=lambda o: o.__dict__, indent=4, ensure_ascii=True))
 
-# Clone data into static directory so that images can be served
+# Clone static/music_data into assets/music_data directory so that images can be served
 # Eventually, I would like to have 2 separate outputs - one tree of JSON data in the assets directory, and one tree of images in the static directory
 # This is the quick-and-dirty fix for now
-shutil.copytree(MUSIC_DATA_OUTPUT_DIR, MUSIC_IMAGES_OUTPUT_DIR)
+music_data_dir = os.path.join(MUSIC_DATA_OUTPUT_DIR, "music_data")
+music_images_dir = os.path.join(MUSIC_IMAGES_OUTPUT_DIR, "music_data")
+# Remove existing music_data_images directory tree, if it exists
+try:
+    shutil.rmtree(music_images_dir)
+except FileNotFoundError:
+    pass
+shutil.copytree(music_data_dir, music_images_dir)
