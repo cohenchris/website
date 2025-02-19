@@ -47,6 +47,7 @@ for root, dirs, files in os.walk("."):
 deduplicated_chars = shlex.quote("".join(sorted(list(char_set))))
 
 # Create woff2 subset of font characters. Only use characters present in the website.
+os.system(f"mkdir -p ./static/fonts/")
 os.system(f"pyftsubset ./{font_file} --output-file=static/fonts/font.ttf --text={deduplicated_chars}")
 os.system("woff2_compress static/fonts/font.ttf")
 os.system("rm static/fonts/font.ttf")

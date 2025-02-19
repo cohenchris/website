@@ -3,6 +3,29 @@
 starting_dir=$(pwd)
 cd "$(dirname "$0")"
 
+
+# Ensure plexapi is installed
+if ! python3 -c "import plexapi" &> /dev/null; then
+  paru -Syu --noconfirm python-plexapi
+fi
+
+# Ensure hugo is installed
+if ! command -v hugo &> /dev/null; then
+  paru -Syu --noconfirm hugo
+fi
+
+# Ensure woff2 is installed
+if ! command -v woff2_compress &> /dev/null; then
+  paru -Syu --noconfirm woff2
+fi
+
+# Ensure pyftsubset is installed
+if ! command -v pyftsubset &> /dev/null; then
+  paru -Syu --noconfirm python-fonttools
+fi
+
+
+
 # Font subset
 ./get-all-chars.py space.ttf
 
