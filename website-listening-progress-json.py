@@ -24,6 +24,10 @@ load_dotenv()
 PLEX_URL = os.getenv('PLEX_URL')
 PLEX_TOKEN = os.getenv('PLEX_TOKEN')
 
+if PLEX_URL == "" or PLEX_TOKEN == "":
+    print("Please fill in .env file before proceeding.")
+    exit()
+
 # Place that the website expects data to be
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 MUSIC_IMAGES_OUTPUT_DIR = SCRIPT_DIR + "/assets" # images location
