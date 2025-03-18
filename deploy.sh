@@ -1,8 +1,6 @@
 #!/bin/bash
 
-starting_dir=$(pwd)
 cd "$(dirname "$0")"
-
 
 # Ensure plexapi is installed
 if ! python3 -c "import plexapi" &> /dev/null; then
@@ -27,10 +25,10 @@ fi
 
 
 # Font subset
-./get-all-chars.py space.ttf
+python3 ./get-all-chars.py space.ttf
 
 # Use my wgetrc, which moves .wget-hsts from ~/ to ~/.cache
-export WGETRC=/home/phrog/.config/wget/wgetrc
+export WGETRC=/home/${USER}/.config/wget/wgetrc
 
 # Get Resume PNG, convert to webp, and resize
 wget https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png
@@ -49,8 +47,13 @@ if [ "$1" != "test" ]; then
   rm -r /home/phrog/server/config/swag/www/chriscohen.dev/html
 
   mv html /home/phrog/server/config/swag/www/chriscohen.dev/
+
+  echo
+  echo "Website built and deployed to production. Don't forget to commit any unsaved changes!"
+else
+  # Start hugo server locally
+  hugo serve --ignoreCache --baseURL http://lab.lan:1313 --bind lab.lan
+
+  echo
+  echo "Website deployed locally at http://lab.lan:1313"
 fi
-
-cd $starting_dir
-
-echo "Don't forget to commit!"
