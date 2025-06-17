@@ -1,5 +1,9 @@
 #!/bin/bash
 
+LOCAL_MACHINE_IP="lab.lan"
+WEBSITE_DEPLOY_DIR="/home/phrog/server/config/swag/www/chriscohen.dev"
+RESUME_URL="https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png"
+
 cd "$(dirname "$0")"
 
 # Ensure plexapi is installed
@@ -31,9 +35,11 @@ python3 ./get-all-chars.py space.ttf
 export WGETRC=/home/${USER}/.config/wget/wgetrc
 
 # Get Resume PNG, convert to webp, and resize
-wget https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png
-cwebp ChrisCohen_resume.png -o static/images/ChrisCohen_resume.webp -q 80
-rm ChrisCohen_resume.png
+RESUME_ORIGINAL_FILENAME=$(basename "${RESUME_URL}")
+RESUME_FILE_BASENAME=${RESUME_ORIGINAL_FILENAME%.*}
+wget "${RESUME_URL}"
+cwebp "${RESUME_ORIGINAL_FILENAME}" -o "static/images/${RESUME_FILE_BASENAME}.webp" -q 80
+rm "${RESUME_ORIGINAL_FILENAME}"
 
 # Sync music listening progress metadata
 python3 ./website-listening-progress-json.py
@@ -44,16 +50,16 @@ if [ "$1" != "test" ]; then
 
   mv public/ html/
 
-  rm -r /home/phrog/server/config/swag/www/chriscohen.dev/html
+  rm -r "${WEBSITE_DEPLOY_DIR}/html"
 
-  mv html /home/phrog/server/config/swag/www/chriscohen.dev/
+  mv html "${WEBSITE_DEPLOY_DIR}"
 
   echo
   echo "Website built and deployed to production. Don't forget to commit any unsaved changes!"
 else
   # Start hugo server locally
-  hugo serve --ignoreCache --baseURL http://lab.lan:1313 --bind lab.lan
+  hugo serve --ignoreCache --baseURL "http://${LOCAL_MACHINE_IP}:1313" --bind "${LOCAL_MACHINE_IP}"
 
   echo
-  echo "Website deployed locally at http://lab.lan:1313"
+  echo "Website deployed locally at http://${LOCAL_MACHINE_IP}:1313"
 fi
