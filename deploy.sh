@@ -1,8 +1,8 @@
 #!/bin/bash
 
 LOCAL_MACHINE_IP="lab.lan"
-WEBSITE_DEPLOY_DIR="/home/phrog/server/config/swag/www/chriscohen.dev"
-RESUME_URL="https://raw.githubusercontent.com/cohenchris/resume/master/ChrisCohen_resume.png"
+WEBSITE_DEPLOY_DIR="/home/phrog/server/core/config/swag/www/chriscohen.dev"
+RESUME_URL="https://raw.githubusercontent.com/cohenchris/resume/master/resume.png"
 
 cd "$(dirname "$0")"
 
@@ -28,7 +28,7 @@ fi
 
 
 
-# Font subset
+# Create a subset of font containing all characters present in website
 python3 ./get-all-chars.py space.ttf
 
 # Use my wgetrc, which moves .wget-hsts from ~/ to ~/.cache
