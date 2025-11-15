@@ -1,10 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-LOCAL_MACHINE_IP="lab.lan"
-WEBSITE_DEPLOY_DIR="/home/phrog/server/core/config/swag/www/chriscohen.dev"
-RESUME_URL="https://raw.githubusercontent.com/cohenchris/resume/master/resume.png"
-
-cd "$(dirname "$0")"
+# Initialize environment
+WORKING_DIR=$(dirname "$(realpath "$0")")
+source ${WORKING_DIR}/.env
+cd "${WORKING_DIR}"
 
 # Ensure plexapi is installed
 if ! python3 -c "import plexapi" &> /dev/null; then
@@ -31,20 +30,26 @@ fi
 # Create a subset of font containing all characters present in website
 python3 ./get-all-chars.py space.ttf
 
-# Use my wgetrc, which moves .wget-hsts from ~/ to ~/.cache
-export WGETRC=/home/${USER}/.config/wget/wgetrc
-
-# Get Resume PNG, convert to webp, and resize
-RESUME_ORIGINAL_FILENAME=$(basename "${RESUME_URL}")
-RESUME_FILE_BASENAME=${RESUME_ORIGINAL_FILENAME%.*}
-wget "${RESUME_URL}"
-cwebp "${RESUME_ORIGINAL_FILENAME}" -o "static/images/${RESUME_FILE_BASENAME}.webp" -q 80
-rm "${RESUME_ORIGINAL_FILENAME}"
+# Download resume PDF
+wget "${RESUME_PDF_URL}" -O "resume.pdf"
+# Conver from PDF to JPEG
+pdftoppm -jpeg -f 1 -singlefile resume.pdf resume
+# Convert from JPEG to WEBP
+cwebp "resume.jpeg" -o "static/images/resume.webp" -q 100
+# Remove temp PDF and JPEG files
+rm "resume.jpeg"
+rm $(basename "${RESUME_URL}")
 
 # Sync music listening progress metadata
 python3 ./website-listening-progress-json.py
 
-if [ "$1" != "test" ]; then
+if [ "$1" == "test" ]; then
+  # Start hugo server locally
+  hugo serve --ignoreCache --baseURL "http://${LOCAL_MACHINE_IP}:1313" --bind "${LOCAL_MACHINE_IP}"
+
+  echo
+  echo "Website deployed locally at http://${LOCAL_MACHINE_IP}:1313"
+else
   # Generate and deploy to server
   hugo
 
@@ -56,10 +61,4 @@ if [ "$1" != "test" ]; then
 
   echo
   echo "Website built and deployed to production. Don't forget to commit any unsaved changes!"
-else
-  # Start hugo server locally
-  hugo serve --ignoreCache --baseURL "http://${LOCAL_MACHINE_IP}:1313" --bind "${LOCAL_MACHINE_IP}"
-
-  echo
-  echo "Website deployed locally at http://${LOCAL_MACHINE_IP}:1313"
 fi
