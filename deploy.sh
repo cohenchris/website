@@ -32,13 +32,13 @@ python3 ./get-all-chars.py space.ttf
 
 # Download resume PDF
 wget "${RESUME_PDF_URL}" -O "resume.pdf"
-# Conver from PDF to JPEG
+# Convert from PDF to JPEG
 pdftoppm -jpeg -f 1 -singlefile resume.pdf resume
 # Convert from JPEG to WEBP
-cwebp "resume.jpeg" -o "static/images/resume.webp" -q 100
+cwebp "resume.jpg" -o "static/images/resume.webp" -q 100
 # Remove temp PDF and JPEG files
-rm "resume.jpeg"
-rm $(basename "${RESUME_URL}")
+rm "resume.jpg"
+rm $(basename "${RESUME_PDF_URL}")
 
 # Sync music listening progress metadata
 python3 ./website-listening-progress-json.py
