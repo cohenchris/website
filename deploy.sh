@@ -32,7 +32,7 @@ python3 ./get-all-chars.py space.ttf
 
 # Move .wget-hsts from home dir to cache dir
 temp_wgetrc=$(mktemp)
-echo "hsts-file=${XDG_CACHE_HOME:-${HOME}/.local/cache}/wget-hsts" > temp_wgetrc
+echo "hsts-file=${XDG_CACHE_HOME:-${HOME}/.local/cache}/wget-hsts" > "${temp_wgetrc}"
 export WGETRC="${temp_wgetrc}"
 
 # Download resume PDF
