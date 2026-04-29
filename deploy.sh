@@ -47,6 +47,10 @@ rm $(basename "${RESUME_PDF_URL}")
 
 # Sync music listening progress metadata
 python3 ./website-listening-progress-json.py
+if [[ "$?" -ne 0 ]]; then
+  echo "Website listening progress update failed..."
+  exit 1
+fi
 
 if [ "$1" == "test" ]; then
   # Start hugo server locally
